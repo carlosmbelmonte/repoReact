@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 ## APP creada usando CLI:
-El nombre del e-commerce sera ENGENUM
+El nombre del e-commerce sera ENGENIUM
 
 ### `npm start`
 
