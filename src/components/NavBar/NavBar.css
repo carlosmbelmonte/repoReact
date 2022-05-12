@@ -1,0 +1,44 @@
+@keyframes rotate-center {
+    0% {
+      transform: rotate(0); }
+    100% {
+      transform: rotate(360deg); } 
+}
+
+@media only screen and (min-width: 900px){
+.desktop-nav-logo{
+    display: flex;
+    padding: 5px 0px;
+    align-items: center;
+}
+.desktop-nav-logo-img{
+    width: 100px;
+    height: 100px;
+    animation: rotate-center 2s ease-in both;
+}
+.desktop-nav-logo-nombre{
+    padding: 0px 10px 0px 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 0; 
+}
+.desktop-listado{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}}
+
+.mobile-nav-logo{
+    display: flex;
+    padding: 5px 0px;
+    align-items: center;
+}
+.mobile-nav-logo-nombre{  
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 0; 
+}
+.mobile-listado{
+    position: absolute;
+    right: 0%;
+}
