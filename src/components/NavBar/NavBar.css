@@ -4,41 +4,46 @@
     100% {
       transform: rotate(360deg); } 
 }
-
-@media only screen and (min-width: 900px){
-.desktop-nav-logo{
-    display: flex;
-    padding: 5px 0px;
-    align-items: center;
+.container-logo{
+  display: flex;
+  padding: 5px 0px;
+  align-items: center;
 }
-.desktop-nav-logo-img{
-    width: 100px;
-    height: 100px;
-    animation: rotate-center 2s ease-in both;
+.container-logo h1{
+  color: white;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-.desktop-nav-logo-nombre{
-    padding: 0px 10px 0px 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    line-height: 0; 
+.container-logo h1 span{
+  margin: 0px 2rem;
 }
-.desktop-listado{
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-}}
-
-.mobile-nav-logo{
-    display: flex;
-    padding: 5px 0px;
-    align-items: center;
+.nav-logo-img{
+  padding: 5px 0px;
+  animation: rotate-center 2s ease-in both;
 }
-.mobile-nav-logo-nombre{  
-    margin-top: 0px;
-    margin-bottom: 0px;
-    line-height: 0; 
+.container-list{
+  display: flex; 
+  align-items: center;
 }
-.mobile-listado{
-    position: absolute;
-    right: 0%;
+.container-list ul{
+  list-style: none;
+}
+.container-list ul li{
+  display: inline-block;
+  margin: 0px 1rem;
+}
+.container-list .navbar__btn{
+  font-size: 16px;
+  font-weight: 500;
+}
+.container-list .navbar__btn:hover {
+  background-color: lightslategray; 
+}
+.container-list .carrito__btn{
+  margin: 0px 0px 0px 7rem;      
+}
+.container-list .carrito__btn:hover{
+  background-color:cadetblue;    
 }
