@@ -4,7 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
 const NavBar = () => {
     return (
@@ -41,7 +41,7 @@ const NavBar = () => {
                         </li>
                         <li>
                             <Button color="inherit" className='carrito__btn'>
-                                <ShoppingCartIcon /> 
+                                <ShoppingCartTwoToneIcon /> 
                             </Button>
                         </li>
                     </ul>                
