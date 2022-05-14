@@ -11,13 +11,13 @@
 }
 .container-logo h1{
   color: white;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 0px 0px 1rem;
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 .container-logo h1 span{
-  margin: 0px 2rem;
+  margin: 0px 0px 0px 1rem;
 }
 .nav-logo-img{
   padding: 5px 0px;
@@ -32,17 +32,17 @@
 }
 .container-list ul li{
   display: inline-block;
-  margin: 0px 1rem;
+  margin: 0px 1vh;
 }
 .container-list .navbar__btn{
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }
 .container-list .navbar__btn:hover {
   background-color: lightslategray; 
 }
 .container-list .carrito__btn{
-  margin: 0px 0px 0px 7rem;      
+  margin: 0px 0px 0px 5rem;      
 }
 .container-list .carrito__btn:hover{
   background-color:cadetblue;    

@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     //JSX
-    <div className="App">
+    <div>
       <NavBar/>
       Contenido del e-commerc
     </div>
