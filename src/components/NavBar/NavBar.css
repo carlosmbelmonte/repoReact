@@ -42,10 +42,3 @@
 .container-list .navbar__btn:hover {
   background-color: lightslategray; 
 }
-.container-cart{
-  display: flex; 
-  align-items: center;     
-}
-.container-cart .carrito__btn:hover{
-  background-color:cadetblue;    
-}

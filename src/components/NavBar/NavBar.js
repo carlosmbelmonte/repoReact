@@ -1,11 +1,11 @@
 //UpperCamelCase
 import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
-import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
 const NavBar = () => {
     return (
@@ -54,11 +54,7 @@ const NavBar = () => {
                     justifyContent="flex-end"
                     alignItems="center"
                 >
-                    <div className="container-cart">
-                        <Button color="inherit" className='carrito__btn'>
-                            <ShoppingCartTwoToneIcon /> 
-                        </Button>  
-                    </div>               
+                    <CartWidget/>               
                                             
                 </Grid>
             </Grid>
