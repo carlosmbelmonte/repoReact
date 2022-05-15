@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/Card/Card';
-import {Container, Grid} from '@mui/material';
+import {Container} from '@mui/material';
+import ItemListContainer from './components/ItemList/ItemList';
 
 function App() {
   return (
@@ -9,14 +9,7 @@ function App() {
     <div>
       <NavBar/>
       <Container>
-        <Grid container>
-          <Grid item md={3}>
-            <ItemListContainer/>
-          </Grid>
-          <Grid item md={3}>
-            <ItemListContainer/>
-          </Grid>
-        </Grid>
+        <ItemListContainer/>
       </Container>
       
     </div>
