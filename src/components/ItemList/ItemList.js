@@ -24,20 +24,18 @@ const ItemListContainer = () => {
             imagen : "04_fuentes.png"
         }
     ];
+
+    const box = [];
+    for (let i=0; i<4; i++){
+        box.push(
+            <Grid item md={3}>
+                <CardProducto nombreProducto={productos[i].nombre} precioProducto={productos[i].precio} imagenProducto={productos[i].imagen}/>
+            </Grid>
+        );
+    }
     return (
         <Grid container>
-            <Grid item md={3}>
-                <CardProducto nombreProducto={productos[0].nombre} precioProducto={productos[0].precio} imagenProducto={productos[0].imagen}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardProducto nombreProducto={productos[1].nombre} precioProducto={productos[1].precio} imagenProducto={productos[1].imagen}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardProducto nombreProducto={productos[2].nombre} precioProducto={productos[2].precio} imagenProducto={productos[2].imagen}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardProducto nombreProducto={productos[3].nombre} precioProducto={productos[3].precio} imagenProducto={productos[3].imagen}/>
-            </Grid>
+            {box}
         </Grid>    
     )    
 }
