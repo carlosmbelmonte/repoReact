@@ -1,7 +1,8 @@
+import './ItemList.css';
 import {Grid} from '@mui/material';
 import CardProducto from '../Card/Card';
 
-const ItemListContainer = () => {
+const ItemListContainer = ({title}) => {
     const productos = [
         {
             nombre: "Balizas",
@@ -34,9 +35,12 @@ const ItemListContainer = () => {
         );
     }
     return (
-        <Grid container>
-            {box}
-        </Grid>    
+        <>
+            <h2 className="titulo-h2">{title}</h2>
+            <Grid container>
+                {box}
+            </Grid>  
+        </>  
     )    
 }
 

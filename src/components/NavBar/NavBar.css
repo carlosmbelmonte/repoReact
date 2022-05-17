@@ -33,7 +33,7 @@
 }
 .container-list ul li{
   display: inline-block;
-  margin: 0px 1vh;
+  margin: 0px 0.35rem;
 }
 .container-list .navbar__btn{
   font-size: 15px;

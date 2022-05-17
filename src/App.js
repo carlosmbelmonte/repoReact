@@ -9,9 +9,9 @@ function App() {
     <div>
       <NavBar/>
       <Container>
-        <ItemListContainer/>
-      </Container>
-      
+        <ItemListContainer title={"Automatizacion Industrial"}/>
+        <ItemListContainer title={"Electronica de potencia"}/>
+      </Container> 
     </div>
   );
 }
