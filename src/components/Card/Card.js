@@ -15,7 +15,7 @@ const CardProducto = ({nombreProducto, precioProducto, imagenProducto, stockProd
                     <p>{nombreProducto}</p>
                     <span>$ {precioProducto}</span>
                     <Button variant="contained" className="card__btn">Detalle</Button>
-                    <ItemCount stock={stockProducto} initial={1}/>
+                    <ItemCount stock={stockProducto} initial={1} onAdd={nombreProducto}/>
                 </div>
             </CardContent>
         </Card>               
