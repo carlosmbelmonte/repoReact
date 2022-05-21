@@ -1,24 +1,30 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import {Container} from '@mui/material';
-import ItemListContainer from './components/ItemList/ItemList';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import CartWidget from './components/CartWidget/CartWidget';
+import ItemList from './components/ItemList/ItemList';
 
 
 function App() {
   return (
     //JSX
-    <div>
+    
       <div>
-        <NavBar/>
+        <NavBar>
+          <CartWidget/>
+        </NavBar>
         <Container>
-          <ItemListContainer title={"Automatizacion Industrial"}/>
-          <ItemListContainer title={"Electronica de potencia"}/>
+          <ItemListContainer title={"Automatizacion Industrial"}>
+            <ItemList/>
+          </ItemListContainer>    
+          <ItemListContainer title={"Electronica de potencia"}>
+             
+          </ItemListContainer> 
         </Container>  
       </div>
-      <div>
-          
-      </div>
-    </div>
+     
+    
 
 
   );

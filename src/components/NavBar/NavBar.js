@@ -1,13 +1,12 @@
 //UpperCamelCase
 import './NavBar.css';
-import CartWidget from '../CartWidget/CartWidget';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 
-const NavBar = () => {
+const NavBar = ({children}) => {
     return (
         <AppBar position="static">
             <Toolbar>
@@ -53,13 +52,10 @@ const NavBar = () => {
                     direction="row"
                     justifyContent="flex-end"
                     alignItems="center"
-                >
-                    <CartWidget/>               
-                                            
+                >                                  
+                    {children}                       
                 </Grid>
-            </Grid>
-                
-                                 
+            </Grid>                        
             </Toolbar>
         </AppBar>
     ) 
