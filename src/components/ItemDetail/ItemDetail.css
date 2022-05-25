@@ -1,0 +1,18 @@
+.border-grid{
+    border:2px solid #b3b3b3;     
+}
+.border-gridSpacing{
+    border-right:2px solid #b3b3b3;    
+}
+.img-Detail{
+    width: 100%;
+}
+.h2-Detail{
+    background-color: #e9e8e8;
+    border-bottom: 3px solid #b3b3b3;
+    padding: 0.5rem;
+    margin:1rem;
+}
+.div-Detail{
+    margin:1rem;
+}
