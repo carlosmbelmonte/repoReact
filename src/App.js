@@ -16,8 +16,8 @@ function App() {
         </NavBar>
         <Container>
           <ItemListContainer title={"Automatizacion Industrial"} arrayP={productos}/> 
-          {/*<ItemListContainer title={"Electronica de potencia"} arrayP={[]}/>*/}
-          <ItemDetailContainer/>           
+          <ItemListContainer title={"Electronica de potencia"} arrayP={[]}/>
+          {/*<ItemDetailContainer/>*/}           
         </Container>  
       </div>
      
