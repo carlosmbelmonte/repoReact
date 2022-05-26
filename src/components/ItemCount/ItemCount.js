@@ -2,11 +2,25 @@ import './ItemCount.css'
 import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 
+const funcion = (a) => {
+    return(
+        <>
+        {a && <p>PRUEBA</p>} 
+        </>              
+    )      
+}
+
 const ItemCount = ({stock, initial, onAdd}) => {
+    const [count, setCount] = useState(initial);
+    const [varX, setVarX] = useState(false);
+
     const handleClick = () => {
+        setVarX(true);
         console.log(`Producto: ${onAdd}, Cantidad: ${count}`);
     }
-    const [count, setCount] = useState(initial);
+
+    
+    
     return (
         <div>
             <div className="itemcount-container">
@@ -17,9 +31,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <div className="container-btn">
                 <Button variant="contained" onClick={handleClick} disabled={stock===0 || count===0} className="btn-carrito">AGREGAR AL CARRITO</Button>
             </div>
+            {funcion(varX)}
         </div>      
     )    
 }
 
 export default ItemCount
-
+export {funcion}

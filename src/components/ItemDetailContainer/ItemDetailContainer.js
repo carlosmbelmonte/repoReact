@@ -1,14 +1,14 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { productoBaliza } from "../../utils/productosMock";
 import { useState, useEffect } from "react";
 
-const ItemDetailContainer = () => {
+
+const ItemDetailContainer = ({title, arrayX}) => {
     const [detail , setDetail] = useState({})
     
     const getDetail = () => {
         return new Promise( (resolve, reject) => {
             setTimeout(() => {
-                resolve(productoBaliza)
+                resolve(arrayX)
             }, 2000)
         })
     }
@@ -22,9 +22,8 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <h2>Detail Container</h2>
+            <h2>{title}</h2>
             <ItemDetail data={detail}/>
-            {console.log(detail)}
         </>  
     ) 
 }

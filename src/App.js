@@ -4,7 +4,7 @@ import {Container} from '@mui/material';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartWidget from './components/CartWidget/CartWidget';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import productos from './utils/productosMock';
+import productos, {productoBaliza} from './utils/productosMock';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         </NavBar>
         <Container>
           <ItemListContainer title={"Automatizacion Industrial"} arrayP={productos}/> 
-          <ItemListContainer title={"Electronica de potencia"} arrayP={[]}/>
-          {/*<ItemDetailContainer/>*/}           
+          {/*<ItemListContainer title={"Electronica de potencia"} arrayP={[]}/>*/}
+          {<ItemDetailContainer title={"Detail Container"} arrayX={productoBaliza}/>}           
         </Container>  
       </div>
      
