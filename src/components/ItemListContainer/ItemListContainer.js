@@ -18,7 +18,7 @@ const ItemListContainer = ({title, arrayP}) => {
             .then((res) => {
                 setProd(res);
             })    
-    },[]);
+    },[]);// eslint-disable-line
     return (
         <>
             <h2 className="titulo-h2">{title}</h2>
