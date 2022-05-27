@@ -1,27 +1,27 @@
 const productos = [
     {
-        id: "00",
+        id: 1,
         nombre: "Balizas",
         precio : 1000,
         imagen : "01_balizas.png",
         stock: 10
     },
     {
-        id: "01",
+        id: 2,
         nombre : "Bornes",
         precio : 2000,
         imagen : "02_bornes.png",
         stock: 20
     },
     {
-        id: "02",
+        id: 3,
         nombre : "PLC",
         precio : 3000,
         imagen : "03_plc.png",
         stock: 30
     },
     {
-        id: "03",
+        id: 4,
         nombre : "Fuente",
         precio : 4000,
         imagen : "04_fuentes.png",

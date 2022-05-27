@@ -18,7 +18,7 @@ const ItemDetailContainer = ({title, arrayX}) => {
         .then( (res) => {
             setDetail(res)
         })
-    }, [])
+    }, []); // eslint-disable-line
 
     return (
         <>
