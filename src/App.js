@@ -7,11 +7,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import productos, {productoBaliza} from './utils/productosMock';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './pages/products';
+import Home from './pages/home';
 
 function App() {
   return (
-    //JSX
-    
+    //JSX   
       <div>
         <BrowserRouter>
           <NavBar>
@@ -20,12 +20,13 @@ function App() {
 
           <Container>
             <Routes>
-                <Route exact path='/home' element={<h1>INICIO</h1>}/>
+                <Route exact path='/home' element={<Home/>}/>
                 <Route exact path='/aboutus' element={<h1>QUIENES SOMOS</h1>}/>
                 <Route exact path='/projects' element={<h1>PROYECTOS</h1>}/>
-                <Route exact path='/products' element={<Products/>}/>  
+                <Route exact path='/' element={<Products/>}/>  
                 <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
-                <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>              
+                <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
+                <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>          
             </Routes>
           </Container>
         </BrowserRouter>
