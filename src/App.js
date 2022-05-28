@@ -1,13 +1,11 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import {Container} from '@mui/material';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartWidget from './components/CartWidget/CartWidget';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import productos, {productoBaliza} from './utils/productosMock';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './pages/products';
 import Home from './pages/home';
+import Detalle from './pages/detalleProducto';
 
 function App() {
   return (
@@ -20,10 +18,12 @@ function App() {
 
           <Container>
             <Routes>
+                <Route exact path='/' element={<Products/>}/> 
                 <Route exact path='/home' element={<Home/>}/>
                 <Route exact path='/aboutus' element={<h1>QUIENES SOMOS</h1>}/>
                 <Route exact path='/projects' element={<h1>PROYECTOS</h1>}/>
-                <Route exact path='/' element={<Products/>}/>  
+                <Route exact path='/products' element={<Products/>}/>
+                <Route path='/product/:id' element={<Detalle/>}/>
                 <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
                 <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
                 <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>          

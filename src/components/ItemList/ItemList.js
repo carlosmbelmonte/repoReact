@@ -10,7 +10,7 @@ const ItemList = ({array}) => {
                     array.map( ({nombre,precio,imagen,stock,id}) => {
                         return(
                             <Grid item md={3} key={id}>
-                                <Item nombreProducto={nombre} precioProducto={precio} imagenProducto={imagen} stockProducto={stock}/>
+                                <Item nombreProducto={nombre} precioProducto={precio} imagenProducto={imagen} stockProducto={stock} idProducto={id}/>
                             </Grid>
                         )
                     })
