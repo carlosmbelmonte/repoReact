@@ -17,6 +17,14 @@
 .container-card span{
     margin-bottom: 5px;
 }
+.container-card .card__btn{
+    width: 100%;
+}
+
 .container-card .card__btn:hover{
     background-color: lightslategray; 
+}
+.link-color{
+    color: white;
+    text-decoration:none;
 }
