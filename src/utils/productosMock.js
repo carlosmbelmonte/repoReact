@@ -1,17 +1,17 @@
-const productos = [
+const automatizacion = [
     {
         id: 1,
-        nombre: "Balizas",
+        nombre: "HMI",
         precio : 1000,
-        imagen : "01_balizas.png",
+        imagen : "01_HMI.jpg",
         stock: 10,
-        descripcion:"Gracias a nuestros dispositivos de señalización e indicación podrá saber en cualquier momento la situación actual en la producción o dónde se encuentra una herramienta concreta en este momento. Puede monitorizar de forma fiable el estado de máquinas e instalaciones y visualizar las señales de salida de los sensores mejores bornes del mundo, para que su tablero de control cumpla los máximos estandares de calidad. Amplia variedad de modelos disponibles de acuerdo a cada necesidad."
+        descripcion:"Las pantallas HMI son el futuro de la industria. Es una interfaz hombre-máquina (Human Machine Interface – HMI), tiene la capacidad de remplazar los antiguos botones por pantalla robusta y con capacidad de visualizar y comandar distintas maquinas, dispositivos y procesos."
     },
     {
         id: 2,
         nombre : "Bornes",
         precio : 2000,
-        imagen : "02_bornes.png",
+        imagen : "02_bornes.jpg",
         stock: 20,
         descripcion:"Los mejores bornes del mundo, para que su tablero de control cumpla los máximos estandares de calidad. Amplia variedad de modelos disponibles de acuerdo a cada necesidad. Cumpliendo las exigencias electricas para cada caso."
     },
@@ -19,7 +19,7 @@ const productos = [
         id: 3,
         nombre : "PLC",
         precio : 3000,
-        imagen : "03_plc.png",
+        imagen : "03_plc.jpg",
         stock: 30,
         descripcion:"Automatización profesional para sus instalaciones. Phoenix Contact le ofrece siempre el PLC para Ethernet, los sistemas de E/S y el software de PLC adecuados, tanto para señales analógicas como para señales digitales."
     },
@@ -27,7 +27,7 @@ const productos = [
         id: 4,
         nombre : "Fuente",
         precio : 4000,
-        imagen : "04_fuentes.png",
+        imagen : "04_fuentes.jpg",
         stock: 40,
         descripcion:"Fuentes de alimentación, convertidores DC/DC, módulos de redundancia y UPS´s diseñados de forma óptima en términos de funcionalidad y diseño para satisfacer los requisitos de las diferentes industrias."
     }
@@ -42,5 +42,5 @@ const productoBaliza ={
     descripcion:"Los mejores bornes del mundo, para que su tablero de control cumpla los máximos estandares de calidad. Amplia variedad de modelos disponibles de acuerdo a cada necesidad. Cumpliendo las exigencias electricas para cada caso."
 }*/
 
-export default productos
+export default automatizacion
 //export {productoBaliza}

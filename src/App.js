@@ -6,8 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './pages/products';
 import Home from './pages/home';
 import Detalle from './pages/detalleProducto';
+import Categoria from './pages/categorias';
 
-function App() {
+function App() { 
   return (
     //JSX   
       <div>
@@ -23,6 +24,7 @@ function App() {
                 <Route exact path='/aboutus' element={<h1>QUIENES SOMOS</h1>}/>
                 <Route exact path='/projects' element={<h1>PROYECTOS</h1>}/>
                 <Route exact path='/products' element={<Products/>}/>
+                <Route exact path='products/:category' element={<Categoria/>}/>
                 <Route path='/product/:id' element={<Detalle/>}/>
                 <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
                 <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     

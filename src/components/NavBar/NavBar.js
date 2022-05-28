@@ -39,6 +39,22 @@ const NavBar = ({children}) => {
                             </li>
                             <li>
                                 <Button color="inherit" className="navbar__btn"><Link to ="/products" className="link-color">Productos</Link></Button>
+                                <ul className="interior">
+                                    <li>
+                                        <Button>
+                                            <Link to ={`/products/Automatizacion`} className="link-color">
+                                                Automatizacion Industrial
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                    <li>
+                                        <Button>
+                                            <Link to ={`/products/Medidores`} className="link-color">
+                                                Medidores Trifasicos
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <Button color="inherit" className="navbar__btn"><Link to ="/services" className="link-color">Servicios</Link></Button>
