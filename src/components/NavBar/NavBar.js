@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
+import { Link } from 'react-router-dom';
 
 const NavBar = ({children}) => {
     return (
@@ -13,35 +14,37 @@ const NavBar = ({children}) => {
             <Grid container spacing={0}>
                 <Grid item md={3}>
                     <div className="container-logo">
-                        <Avatar
-                            className='nav-logo-img'
-                            alt="Logo ENGENIUM"
-                            src="./logo.png"
-                            sx={{ width: 60, height: 60 }}
-                        />
-                        <h1>ENGENIUM<span>|</span></h1>                      
+                        <Link to ="/products" className="link-color">
+                            <Avatar
+                                className='nav-logo-img'
+                                alt="Logo ENGENIUM"
+                                src="../logo.png"
+                                sx={{ width: 60, height: 60 }}
+                            />
+                           <h1>ENGENIUM<span>|</span></h1>      
+                        </Link>                               
                     </div>    
                 </Grid>
                 <Grid item md={7} >
                     <div className="container-list"> 
                         <ul>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Inicio</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/home" className="link-color">Inicio</Link></Button>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Quienes somos</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/aboutus" className="link-color">Quienes somos</Link></Button>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Proyectos</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/projects" className="link-color">Proyectos</Link></Button>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Productos</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/products" className="link-color">Productos</Link></Button>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Servicios</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/services" className="link-color">Servicios</Link></Button>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn">Contacto</Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/contacts" className="link-color">Contacto</Link></Button>
                             </li>
                         </ul>                
                     </div>

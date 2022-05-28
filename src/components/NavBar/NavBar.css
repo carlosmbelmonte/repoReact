@@ -42,3 +42,10 @@
 .container-list .navbar__btn:hover {
   background-color: lightslategray; 
 }
+
+.link-color{
+  color: white;
+  text-decoration:none;
+  display: flex;
+  align-items: center;
+}
