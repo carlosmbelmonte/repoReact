@@ -1,24 +1,18 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ({title, arrayX}) => {
     const [detail , setDetail] = useState({})
-    
-    const getDetail = () => {
-        return new Promise( (resolve, reject) => {
-            setTimeout(() => {
-                resolve(arrayX)
-            }, 2000)
-        })
-    }
+    const { id }= useParams();
+
+    const prodFilter = arrayX.find( (detail) => {
+        return detail.id === parseInt(id)
+    })
 
     useEffect(() => {
-        getDetail()
-        .then( (res) => {
-            setDetail(res)
-        })
-    }, []); // eslint-disable-line
+        setDetail(prodFilter)
+    }, [id]); // eslint-disable-line
 
     return (
         <>
