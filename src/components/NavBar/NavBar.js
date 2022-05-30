@@ -7,7 +7,11 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
 
+let variableT;
 const NavBar = ({children}) => {
+    const otroClick = (a) =>{
+            variableT = a;  
+    }
     return (
         <AppBar position="static">
             <Toolbar>
@@ -41,15 +45,15 @@ const NavBar = ({children}) => {
                                 <Button color="inherit" className="navbar__btn"><Link to ="/products" className="link-color">Productos</Link></Button>
                                 <ul className="interior">
                                     <li>
-                                        <Button>
-                                            <Link to ={`/products/Automatizacion`} className="link-color">
+                                        <Button onClick={otroClick('automatizacion')}>
+                                            <Link to ={`/products/automatizacion`} className="link-color">
                                                 Automatizacion Industrial
                                             </Link>
                                         </Button>
                                     </li>
                                     <li>
-                                        <Button>
-                                            <Link to ={`/products/Medidores`} className="link-color">
+                                        <Button onClick={otroClick('medidor')}>
+                                            <Link to ={`/products/medidores`} className="link-color">
                                                 Medidores Trifasicos
                                             </Link>
                                         </Button>
@@ -81,3 +85,4 @@ const NavBar = ({children}) => {
 }
 
 export default NavBar
+export {variableT}

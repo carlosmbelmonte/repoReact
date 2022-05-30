@@ -3,14 +3,22 @@ import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailCon
 import automatizacion from "../utils/productosMock";
 import medidores from '../utils/medidoresMock';
 import {variableH} from '../components/Item/Item';
+import nuevo from "../utils/nuevoMock";
 
 const Detalle = () => {
+  const filtro1 = nuevo.filter( (produc1) => {
+    return produc1.category === "automatizacion"
+  })
+const filtro2 = nuevo.filter( (produc2) => {
+    return produc2.category === "medidor"
+  })
+
     const imprimirDetalle = () => {
         if(variableH === "Automatizacion Industrial"){
-          return(automatizacion)             
+          return(filtro1)             
         }
         if(variableH === "Medidores Trifasicos"){
-          return(medidores)             
+          return(filtro2)             
         }
     }   
 
