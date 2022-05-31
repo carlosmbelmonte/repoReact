@@ -37,7 +37,7 @@ const nuevo = [
     },
     {
         id: 5,
-        category: "medidor",
+        category: "medidores",
         nombre: "ZMR",
         precio : 1000,
         imagen : "01_ZMR230.jpg",
@@ -46,7 +46,7 @@ const nuevo = [
     },
     {
         id: 6,
-        category: "medidor",
+        category: "medidores",
         nombre : "ZMG405",
         precio : 2000,
         imagen : "02_ZMG405.jpg",
@@ -55,7 +55,7 @@ const nuevo = [
     },
     {
         id: 7,
-        category: "medidor",
+        category: "medidores",
         nombre : "ZMD405",
         precio : 3000,
         imagen : "03_ZMD405.jpg",
@@ -64,7 +64,7 @@ const nuevo = [
     },
     {
         id: 8,
-        category: "medidor",
+        category: "medidores",
         nombre : "ZMD405-SMA",
         precio : 4000,
         imagen : "04_ZMD405_SMA.jpg",
