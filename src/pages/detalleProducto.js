@@ -1,7 +1,4 @@
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
-/*import automatizacion from "../utils/productosMock";*/
-import automatizacion from "../utils/productosMock";
-import medidores from '../utils/medidoresMock';
 import {variableH} from '../components/Item/Item';
 import nuevo from "../utils/nuevoMock";
 
@@ -10,7 +7,7 @@ const Detalle = () => {
     return produc1.category === "automatizacion"
   })
 const filtro2 = nuevo.filter( (produc2) => {
-    return produc2.category === "medidor"
+    return produc2.category === "medidores"
   })
 
     const imprimirDetalle = () => {
