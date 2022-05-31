@@ -1,6 +1,7 @@
 # ENGENIUM
 Primera entrega del curso de React.js de Coderhouse,
 Comisión 31180
+El proyecto consiste en un e-commerce de equipamiento electronico industrial. En el mismo se listan una serie de productos y se definen sus caracteristicas.
 
 ## Alumno
 Carlos Mariano Belmonte - carlos.m.belmonte@gmail.com
