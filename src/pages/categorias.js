@@ -1,20 +1,42 @@
-/*import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import automatizacion from "../utils/productosMock";
-import medidores from "../utils/medidoresMock";*/
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import nuevo from "../utils/nuevoMock";
-import { variableT } from "../components/NavBar/NavBar";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-const Categoria = () => {
-    const filtro1 = nuevo.filter( (produc1) => {
-        return produc1.category === "automatizacion"
-    })
-    const filtro2 = nuevo.filter( (produc2) => {
-        return produc2.category === "medidor"
-    })
+const Categoria = () => { 
+    const [categ, setCateg] = useState([]);
+    const [title, setTitle] = useState("");   
+    const { category }=useParams();
+   
+    const getProductos = () =>{
+        return new Promise ( (resolve,reject)=>{          
+            resolve(nuevo)                    
+        });
+    };
+
+    useEffect( () => {
+        setCateg([]);
+        console.log("category: ", category);
+        if(category==="automatizacion"){
+            setTitle("Automatizacion Industrial");
+        }
+        if(category==="medidores"){
+            setTitle("Medidores Trifasicos");
+        }
+
+        getProductos()
+            .then((res) => {
+                filterByCategory(res)
+            })    
+    },[category]);// eslint-disable-line
+
+    const filterByCategory = (array) => {    
+        setCateg(array.filter((rec) => rec.category === category))          
+    }
     
     return(
         <>
-            <h1>PENDIENTE DE CONSTRUCCION</h1>
+            <ItemListContainer title={title} arrayP={categ}/>
         </>        
     )
 }
