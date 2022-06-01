@@ -16,10 +16,11 @@ const ItemDetail = ({data}) => {
                         <p>{data.descripcion}</p>
                         <p>Id: {data.id}</p>     
                     </div>
-                    <Grid item md={6}>
-                        <ItemCount stock={data.stock} initial={1} onAdd={data.nombre}/>      
-                    </Grid>
-                                    
+                    <Grid className="grid-interno" container spacing={0}>
+                        <Grid item md={6}>
+                            <ItemCount stock={data.stock} initial={1} onAdd={data.nombre}/>      
+                        </Grid>     
+                    </Grid>                                   
                 </Grid>
 
                 <Grid item md={2}>
