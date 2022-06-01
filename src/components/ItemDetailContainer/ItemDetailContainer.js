@@ -18,6 +18,7 @@ const ItemDetailContainer = ({title, arrayX}) => {
         <>
             <h2>{title}</h2>
             <ItemDetail data={detail}/>
+            {console.log(detail)}
         </>  
     ) 
 }
