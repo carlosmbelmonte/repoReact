@@ -6,7 +6,7 @@ const ItemCount = ({stock, initial, onAdd,setShowState}) => {
     const [count, setCount] = useState(initial);
 
     const handleClick = () => {
-        console.log(`Producto: ${onAdd}, Cantidad: ${count}`);
+        console.log(`Productos: ${onAdd}, Cantidades: ${count}`);
         setShowState(true);
     }
     
