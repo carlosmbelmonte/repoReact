@@ -17,12 +17,22 @@
     margin:1rem;
 }
 .grid-interno{
-    margin:1rem;
-    width:100%;
+    padding: 0px 1rem 0px 1rem;
+    justify-items: center;
 }
-
-.endCompra{
-    display: flex;
+.link-end{
+    color: white;
+    text-decoration:none;
+}
+.container-btn{
+    display: flex; 
     align-items: center;
     justify-content: center;
 }
+.container-btn .btn__end:hover{
+    background-color: lightslategray; 
+}
+
+
+
+ 

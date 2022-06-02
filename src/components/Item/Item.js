@@ -29,7 +29,7 @@ const Item = ({nombreProducto, precioProducto, imagenProducto, stockProducto, id
                     <p>{nombreProducto}</p>
                     <span>u$s {precioProducto}</span>
                     <Link to ={`/product/${idProducto}`} className="link-color"><Button variant="contained" className="card__btn" onClick={otherClick}>Detalle</Button></Link>
-                    {<ItemCount stock={stockProducto} initial={1} onAdd={nombreProducto}/>}
+                    {<ItemCount stock={stockProducto} initial={1} onAdd={nombreProducto} setShowState={() => false}/>}
 
                     {/*showState===false ?
                         <ItemCount stock={stockProducto} initial={1} onAdd={nombreProducto} setShowState={setShowState}/> 

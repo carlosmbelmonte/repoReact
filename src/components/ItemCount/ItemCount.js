@@ -11,8 +11,8 @@ const ItemCount = ({stock, initial, onAdd,setShowState}) => {
     }
     
     return (
-        <div>
-            <div className="itemcount-container">
+        <div className="container__gral">
+            <div className="itemcount">
                 <Button variant="outlined" onClick={() => setCount(count - 1)} disabled={count<1}>-</Button>
                 <p>{count}</p>
                 <Button variant="outlined" onClick={() => setCount(count + 1)} disabled={count>=stock}>+</Button>          

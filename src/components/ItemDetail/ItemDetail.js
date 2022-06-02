@@ -21,16 +21,17 @@ const ItemDetail = ({data}) => {
                         <p>{data.descripcion}</p>
                         <p>Id: {data.id}</p>     
                     </div>
-                    <Grid className="grid-interno" container spacing={0}>
-                        <Grid item md={6}>
-                            
-                            {showState===false ?
-                                <ItemCount stock={data.stock} initial={1} onAdd={data.nombre} setShowState={setShowState}/> 
-                                : 
-                                <Button variant="contained" className="endCompra"><Link to ="/cart">Finalizar Compra</Link></Button>  
-                            } 
-                              
-                        </Grid>     
+                    <Grid container spacing={0}>
+                        <Grid  item md={6}>
+                            <div className="grid-interno">
+                                {showState===false ?
+                                    <ItemCount stock={data.stock} initial={1} onAdd={data.nombre} setShowState={setShowState}/> 
+                                    :
+                                    <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Finalizar Compra</Link></Button></div> 
+                                }     
+                            </div>      
+                        </Grid>  
+                        <Grid item md={6}></Grid>   
                     </Grid>                                   
                 </Grid>
 
