@@ -2,11 +2,12 @@ import './ItemCount.css'
 import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd,setShowState}) => {
     const [count, setCount] = useState(initial);
 
     const handleClick = () => {
         console.log(`Producto: ${onAdd}, Cantidad: ${count}`);
+        setShowState(true);
     }
     
     return (
