@@ -3,12 +3,12 @@ import {variableH} from '../components/Item/Item';
 import nuevo from "../utils/nuevoMock";
 
 const Detalle = () => {
-  const filtro1 = nuevo.filter( (produc1) => {
-    return produc1.category === "automatizacion"
-  })
-  const filtro2 = nuevo.filter( (produc2) => {
-    return produc2.category === "medidores"
-  })
+    const filtro1 = nuevo.filter( (produc1) => {
+      return produc1.category === "automatizacion"
+    })
+    const filtro2 = nuevo.filter( (produc2) => {
+      return produc2.category === "medidores"
+    })
 
     const imprimirDetalle = () => {
         if(variableH === "Automatizacion Industrial"){
