@@ -6,7 +6,7 @@ const Detalle = () => {
   const filtro1 = nuevo.filter( (produc1) => {
     return produc1.category === "automatizacion"
   })
-const filtro2 = nuevo.filter( (produc2) => {
+  const filtro2 = nuevo.filter( (produc2) => {
     return produc2.category === "medidores"
   })
 

@@ -1,13 +1,13 @@
 import { createContext, useState } from "react";  
 
-const CartContext = createContext([]);
+const CartContext = createContext();
 
 const CartProvider = ({children}) =>{
     //const [cart, setCart] = useState([]);
     const cart = [];
     const addItem = (product) =>{
         cart.push(product);
-        //setCart(cart => [...cart, product]); //agrego el producto al carrito
+        //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito
         console.log("zzzzzzzz: ",cart)
     }
 
