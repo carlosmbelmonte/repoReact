@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 const ItemCount = ({stock, initial, onAdd,setShowState,itemProducto}) => {
     const [count, setCount] = useState(initial);
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         setShowState(true);
         onAdd(count);
     }

@@ -1,18 +1,18 @@
 import { createContext, useState } from "react";  
 
-const CartContext = createContext();
+const CartContext = createContext([]);
 
 const CartProvider = ({children}) =>{
-    const [cartItems, setCartItems] = useState([]);
-
+    //const [cart, setCart] = useState([]);
+    const cart = [];
     const addItem = (product) =>{
-        console.log("aaaaaaaa: ",product)
-        setCartItems((cartItems) => [...cartItems, product]); //agrego el producto al carrito
-        console.log("zzzzzzzz: ",cartItems)
+        cart.push(product);
+        //setCart(cart => [...cart, product]); //agrego el producto al carrito
+        console.log("zzzzzzzz: ",cart)
     }
 
     const data={
-        cartItems,
+        cart,
         addItem
     };
 
