@@ -1,20 +1,14 @@
 import './ItemCount.css'
 import Button from '@mui/material/Button';
-import React, { useContext, useState } from 'react';
-import CartContext from '../../context/CartContext';
+import React, { useState } from 'react';
+
 
 const ItemCount = ({stock, initial, onAdd,setShowState,itemProducto}) => {
     const [count, setCount] = useState(initial);
-    const{ addProduct } = useContext(CartContext);
 
     const handleClick = () => {
-        /*console.log(`Productos: ${onAdd}, Cantidades: ${count}`);*/
         setShowState(true);
-        itemProducto = {
-            ...itemProducto,
-            cantidadComprada:count
-        }
-        addProduct(itemProducto);
+        onAdd(count);
     }
     
     return (

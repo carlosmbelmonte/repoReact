@@ -1,14 +1,23 @@
 import {Grid} from '@mui/material';
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({data}) => {
     const[showState, setShowState]= useState(false);
-    
+    const{ addItem } = useContext(CartContext);
+
+    const agregarCantidadAlCarrito = (cantidad) => {
+        data = {
+            ...data,
+            quantity:cantidad
+        }
+        addItem(data); 
+        //setNewData(data);       
+    }
 
     return (
         <>
@@ -27,7 +36,7 @@ const ItemDetail = ({data}) => {
                         <Grid  item md={6}>
                             <div className="grid-interno">
                                 {showState===false ?
-                                    <ItemCount stock={data.stock} initial={1} onAdd={data.nombre} setShowState={setShowState} itemProducto={data}/> 
+                                    <ItemCount stock={data.stock} initial={1} onAdd={agregarCantidadAlCarrito} setShowState={setShowState} itemProducto={data}/> 
                                     :
                                     <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Finalizar Compra</Link></Button></div> 
                                 }     

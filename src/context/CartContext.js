@@ -5,13 +5,15 @@ const CartContext = createContext();
 const CartProvider = ({children}) =>{
     const [cartItems, setCartItems] = useState([]);
 
-    const addProduct = (item) =>{
-        console.log("Se agrego el producto: ",item)
-        setCartItems([item]);
+    const addItem = (product) =>{
+        console.log("aaaaaaaa: ",product)
+        setCartItems((cartItems) => [...cartItems, product]); //agrego el producto al carrito
+        console.log("zzzzzzzz: ",cartItems)
     }
+
     const data={
         cartItems,
-        addProduct
+        addItem
     };
 
     return(
