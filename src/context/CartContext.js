@@ -21,9 +21,14 @@ const CartProvider = ({children}) =>{
         
     }
 
+    const clearAll = () => {
+        cart.length = 0;
+    };
+
     const data={
         cart,
-        addItem
+        addItem,
+        clearAll
     };
 
     return(

@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import CartContext from '../context/CartContext';
 
 const Carrito = () => {
-    const{ cart } = useContext(CartContext);
+    const{ cart, clearAll } = useContext(CartContext);
     return(
         <div className='cart-container'>
             {cart.map( (elemento)=>{
@@ -40,7 +40,7 @@ const Carrito = () => {
                 )
             })}
             <div className="cart-delete-btn">
-                <Button variant="contained" className='cart__btn'>Vaciar carrito</Button>    
+                <Button variant="contained" className='cart__btn' onClick={clearAll}>Vaciar carrito</Button>    
             </div>            
         </div>
         
