@@ -6,39 +6,51 @@ import CartContext from '../context/CartContext';
 
 const Carrito = () => {
     const{ cart, clearAll } = useContext(CartContext);
+
+    const printPantalla = () =>{
+        if(cart.length !== 0){
+            return(
+                cart.map( (elemento)=>{
+                    return(
+                        <>
+                            <Grid className="grid-container" container spacing={0}>
+                                <Grid item md={3} >
+                                    <div className="div-img-item">
+                                        <img className='img-item' alt="Imagen Item" src={`../${elemento.imagen}`} />    
+                                    </div>    
+                                </Grid>
+                                <Grid item md={6} key={elemento.id}>
+                                    <h2 className="h2-item">{elemento.nombre}</h2>
+                                    <div className="p-group">
+                                        <div className="p-item">Precio (Unidad): <p className="p-variable">u$s {elemento.precio}</p></div>
+                                        <div className="p-item">Cantidad seleccionada: <p className="p-variable">{elemento.quantity}</p></div> 
+                                        <div className="p-item">Stock disponible: <p className="p-variable">{elemento.stock}</p></div>   
+                                    </div>                        
+                                </Grid>
+                                <Grid item md={3} >
+                                    <div>
+                                        <ul className="list-group">
+                                            <li className="list-group-item">Sub Total: u$s {(elemento.precio)*(elemento.quantity)}</li>
+                                            <li className="list-group-item">IVA: u$s {(elemento.precio)*(elemento.quantity)*(0.21)}</li>
+                                            <li className="list-group-item">TOTAL: u$s {(elemento.precio)*(elemento.quantity)*(1.21)}</li>
+                                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem">Eliminar Producto</Button></div></li>
+                                        </ul>     
+                                    </div>                               
+                            </Grid>
+                            </Grid>
+                        </>
+                    )
+                })
+            )    
+        }else{
+            return(<h2>El carrito esta vacio!!!</h2>)      
+        }    
+    }
+    
     return(
         <div className='cart-container'>
-            {cart.map( (elemento)=>{
-                return(
-                    <>
-                        <Grid className="grid-container" container spacing={0}>
-                            <Grid item md={3} >
-                                <div className="div-img-item">
-                                    <img className='img-item' alt="Imagen Item" src={`../${elemento.imagen}`} />    
-                                </div>    
-                            </Grid>
-                            <Grid item md={6} key={elemento.id}>
-                                <h2 className="h2-item">{elemento.nombre}</h2>
-                                <div className="p-group">
-                                    <div className="p-item">Precio (Unidad): <p className="p-variable">u$s {elemento.precio}</p></div>
-                                    <div className="p-item">Cantidad seleccionada: <p className="p-variable">{elemento.quantity}</p></div> 
-                                    <div className="p-item">Stock disponible: <p className="p-variable">{elemento.stock}</p></div>   
-                                </div>                        
-                            </Grid>
-                            <Grid item md={3} >
-                                <div>
-                                    <ul className="list-group">
-                                        <li className="list-group-item">Sub Total: u$s {(elemento.precio)*(elemento.quantity)}</li>
-                                        <li className="list-group-item">IVA: u$s {(elemento.precio)*(elemento.quantity)*(0.21)}</li>
-                                        <li className="list-group-item">TOTAL: u$s {(elemento.precio)*(elemento.quantity)*(1.21)}</li>
-                                        <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem">Eliminar Producto</Button></div></li>
-                                    </ul>     
-                                </div>                               
-                           </Grid>
-                        </Grid>
-                    </>
-                )
-            })}
+
+            {printPantalla()}
             <div className="cart-delete-btn">
                 <Button variant="contained" className='cart__btn' onClick={clearAll}>Vaciar carrito</Button>    
             </div>            
