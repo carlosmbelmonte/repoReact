@@ -1,6 +1,7 @@
 import {Grid} from '@mui/material';
 import nuevo from '../utils/nuevoMock'
 import '../pages/styles/carrito.css'
+import Button from '@mui/material/Button';
 
 const Carrito = () => {
     return(
@@ -25,7 +26,7 @@ const Carrito = () => {
                             <li className="list-group-item">Sub Total: u$s</li>
                             <li className="list-group-item">IVA: u$s</li>
                             <li className="list-group-item">TOTAL: u$s</li>
-                            <li className="list-group-item"><button>Eliminar Producto</button></li>
+                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem">Eliminar Producto</Button></div></li>
                         </ul>     
                     </div>
                        
@@ -51,12 +52,16 @@ const Carrito = () => {
                             <li className="list-group-item">Sub Total: u$s</li>
                             <li className="list-group-item">IVA: u$s</li>
                             <li className="list-group-item">TOTAL: u$s</li>
-                            <li className="list-group-item"><button>Eliminar Producto</button></li>
+                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem">Eliminar Producto</Button></div></li>
                         </ul>     
                     </div>
                        
                 </Grid>
             </Grid>
+            <div className="cart-delete-btn">
+                <Button variant="contained" className='cart__btn'>Vaciar carrito</Button>    
+            </div>
+            
         </div>
         
     )
