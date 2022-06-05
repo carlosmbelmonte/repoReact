@@ -5,3 +5,7 @@
 .container-cart .carrito__btn:hover{
     background-color:cadetblue;    
 }
+.link-end{
+    color: white;
+    text-decoration:none;
+}

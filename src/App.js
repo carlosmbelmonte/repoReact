@@ -7,6 +7,7 @@ import Products from './pages/products';
 import Home from './pages/home';
 import Detalle from './pages/detalleProducto';
 import Categoria from './pages/categorias';
+import Carrito from './pages/carrito';
 import {CartProvider} from './context/CartContext';
 
 function App() { 
@@ -30,7 +31,8 @@ function App() {
                   <Route path='/product/:id' element={<Detalle/>}/>
                   <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
                   <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
-                  <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>          
+                  <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
+                  <Route exact path='/cart' element={<Carrito/>}/>        
               </Routes>
             </Container>
           </BrowserRouter>  
