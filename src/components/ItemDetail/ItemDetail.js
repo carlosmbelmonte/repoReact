@@ -10,6 +10,7 @@ const ItemDetail = ({data}) => {
     const[showState, setShowState]= useState(false);
     const{ addItem } = useContext(CartContext);
 
+
     const agregarCantidadAlCarrito = (cantidad) => {
         data = {
             ...data,
