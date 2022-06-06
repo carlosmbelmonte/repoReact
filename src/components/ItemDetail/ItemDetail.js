@@ -39,7 +39,7 @@ const ItemDetail = ({data}) => {
                                 {showState===false ?
                                     <ItemCount stock={data.stock} initial={1} onAdd={agregarCantidadAlCarrito} setShowState={setShowState} itemProducto={data}/> 
                                     :
-                                    <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Finalizar Compra</Link></Button></div> 
+                                    <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Ver Carrito</Link></Button></div> 
                                 }     
                             </div>      
                         </Grid>  
