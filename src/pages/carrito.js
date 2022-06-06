@@ -1,16 +1,22 @@
 import {Grid} from '@mui/material';
 import '../pages/styles/carrito.css'
 import Button from '@mui/material/Button';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import CartContext from '../context/CartContext';
 
 const Carrito = () => {
     const{ cart, clearAll } = useContext(CartContext);
+    const[deleteAll, setDeleteAll]= useState(true);
 
-    const printPantalla = () =>{
-        if(cart.length !== 0){
-            return(
-                cart.map( (elemento)=>{
+    const deleteTodo = () => {
+        setDeleteAll(false);
+        clearAll();
+    }
+   
+    return(
+        <div className='cart-container'>
+            {deleteAll === true && cart.length !== 0 ?
+                cart.map( (elemento) => {
                     return(
                         <>
                             <Grid className="grid-container" container spacing={0}>
@@ -41,18 +47,11 @@ const Carrito = () => {
                         </>
                     )
                 })
-            )    
-        }else{
-            return(<h2>El carrito esta vacio!!!</h2>)      
-        }    
-    }
-    
-    return(
-        <div className='cart-container'>
-
-            {printPantalla()}
+                :
+                <h2>El carrito esta vacio!!!</h2>
+            } 
             <div className="cart-delete-btn">
-                <Button variant="contained" className='cart__btn' onClick={clearAll}>Vaciar carrito</Button>    
+                <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
             </div>            
         </div>
         
