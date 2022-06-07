@@ -5,17 +5,17 @@ import { useContext, useState } from 'react';
 import CartContext from '../context/CartContext';
 
 const Carrito = () => {
-    const{ cart, clearAll, eliminarItem } = useContext(CartContext);
+    const{ cart, clear, removeItem } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(true);
     const[delItem, setDelItem]= useState(false);
 
     const deleteTodo = () => {
         setDeleteAll(false);
-        clearAll();
+        clear();
     }
 
     const deleteItem = (name) => {
-        eliminarItem(name);
+        removeItem(name);
         //console.log(name)
         setDelItem(true);
     }
