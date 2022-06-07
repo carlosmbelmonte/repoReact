@@ -19,6 +19,12 @@ const CartProvider = ({children}) =>{
         //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito    
     }
 
+    const eliminarItem = (nombre) => {       
+        let index = cart.findIndex( el => el.nombre === nombre);
+        cart.splice(index, 1);
+        console.log("El nuevo array de producto es", cart);
+    }
+
     const clearAll = () => {
         cart.length = 0;
     };
@@ -26,7 +32,8 @@ const CartProvider = ({children}) =>{
     const data={
         cart,
         addItem,
-        clearAll
+        clearAll,
+        eliminarItem
     };
 
     return(

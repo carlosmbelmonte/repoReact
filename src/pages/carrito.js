@@ -5,12 +5,17 @@ import { useContext, useState } from 'react';
 import CartContext from '../context/CartContext';
 
 const Carrito = () => {
-    const{ cart, clearAll } = useContext(CartContext);
+    const{ cart, clearAll, eliminarItem } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(true);
 
     const deleteTodo = () => {
         setDeleteAll(false);
         clearAll();
+    }
+
+    const deleteItem = (name) => {
+        eliminarItem(name);
+        //console.log(name)
     }
    
     return(
@@ -20,13 +25,13 @@ const Carrito = () => {
                 cart.map( (elemento) => {
                     return(
                         <>
-                            <Grid className="grid-container" container spacing={0}>
+                            <Grid key={elemento.id} className="grid-container" container spacing={0}>
                                 <Grid item md={3} >
                                     <div className="div-img-item">
                                         <img className='img-item' alt="Imagen Item" src={`../${elemento.imagen}`} />    
                                     </div>    
                                 </Grid>
-                                <Grid item md={6} key={elemento.id}>
+                                <Grid item md={6} >
                                     <h2 className="h2-item">{elemento.nombre}</h2>
                                     <div className="p-group">
                                         <div className="p-item">Precio (Unidad): <p className="p-variable">u$s {elemento.precio}</p></div>
@@ -40,7 +45,11 @@ const Carrito = () => {
                                             <li className="list-group-item">Sub Total: u$s {(elemento.precio)*(elemento.quantity)}</li>
                                             <li className="list-group-item">IVA: u$s {(elemento.precio)*(elemento.quantity)*(0.21)}</li>
                                             <li className="list-group-item">TOTAL: u$s {(elemento.precio)*(elemento.quantity)*(1.21)}</li>
-                                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem" >Eliminar Producto</Button></div></li>
+                                            <li className="list-group-item">
+                                                <div className="div-btn-ItemDelete">
+                                                    <Button variant="contained" className="cart__btnItem" onClick={() => deleteItem(elemento.nombre)}>Eliminar Producto</Button>
+                                                </div>
+                                            </li>
                                         </ul>     
                                     </div>                               
                             </Grid>
