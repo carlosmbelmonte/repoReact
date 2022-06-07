@@ -15,7 +15,7 @@ const Carrito = () => {
    
     return(
         <div className='cart-container'>
-            {console.log("Productos existentes en el carrito", cart)}
+            {console.log("Productos existentes en PAGINA CARRITO", cart)}
             {deleteAll === true && cart.length !== 0 ?
                 cart.map( (elemento) => {
                     return(
@@ -40,7 +40,7 @@ const Carrito = () => {
                                             <li className="list-group-item">Sub Total: u$s {(elemento.precio)*(elemento.quantity)}</li>
                                             <li className="list-group-item">IVA: u$s {(elemento.precio)*(elemento.quantity)*(0.21)}</li>
                                             <li className="list-group-item">TOTAL: u$s {(elemento.precio)*(elemento.quantity)*(1.21)}</li>
-                                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem">Eliminar Producto</Button></div></li>
+                                            <li className="list-group-item"><div className="div-btn-ItemDelete"><Button variant="contained" className="cart__btnItem" >Eliminar Producto</Button></div></li>
                                         </ul>     
                                     </div>                               
                             </Grid>

@@ -19,7 +19,6 @@ const CartProvider = ({children}) =>{
         //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito    
     }
 
-
     const clearAll = () => {
         cart.length = 0;
     };
