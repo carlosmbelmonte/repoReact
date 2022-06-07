@@ -13,4 +13,4 @@ npm start
 ```
 URL: [http://localhost:3000](http://localhost:3000)
 
-![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/primeraEntrega.gif)
+![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/actualizacionDeEntrega.gif)
