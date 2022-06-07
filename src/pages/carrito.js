@@ -15,6 +15,7 @@ const Carrito = () => {
    
     return(
         <div className='cart-container'>
+            {console.log("Productos existentes en el carrito", cart)}
             {deleteAll === true && cart.length !== 0 ?
                 cart.map( (elemento) => {
                     return(

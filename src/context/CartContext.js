@@ -14,12 +14,11 @@ const CartProvider = ({children}) =>{
             console.log("Se agrego el producto al carrito: ",cart);  
             return cart  
         }else{
-            console.log("El producto ya se encontraba en el carrito");  
-        }
-        
-        //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito
-        
+            console.log("El producto ya se encontraba en el carrito"); 
+        }    
+        //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito    
     }
+
 
     const clearAll = () => {
         cart.length = 0;

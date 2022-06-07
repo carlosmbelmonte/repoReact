@@ -8,18 +8,26 @@ import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({data}) => {
     const[showState, setShowState]= useState(false);
-    const{ addItem } = useContext(CartContext);
-
+    const{ addItem} = useContext(CartContext);
+    let botonEstados;
 
     const agregarCantidadAlCarrito = (cantidad) => {
         data = {
             ...data,
             quantity:cantidad
         }
-        addItem(data); 
-        //setNewData(data);       
+        addItem(data);      
     }
 
+    const irCarrito = () => {
+        if(botonEstados){
+            botonEstados=false;
+            return(
+                <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Ver Carrito</Link></Button></div>
+            )
+        }
+    }
+    
     return (
         <>
             <Grid className="border-grid" container spacing={0}>
@@ -39,11 +47,16 @@ const ItemDetail = ({data}) => {
                                 {showState===false ?
                                     <ItemCount stock={data.stock} initial={1} onAdd={agregarCantidadAlCarrito} setShowState={setShowState} itemProducto={data}/> 
                                     :
-                                    <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Ver Carrito</Link></Button></div> 
+                                    <>
+                                        <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/products" className="link-end">Volver a productos</Link></Button></div> 
+                                        {botonEstados = true}
+                                    </>
                                 }     
                             </div>      
                         </Grid>  
-                        <Grid item md={6}></Grid>   
+                        <Grid item md={6}>
+                            {irCarrito()}
+                        </Grid>   
                     </Grid>                                   
                 </Grid>
 
