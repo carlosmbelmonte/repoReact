@@ -22,10 +22,10 @@ const Carrito = () => {
 
     const otrogridMap = () => {
         return(
-            cart.map( (elemento) => {
+            cart.map( (elemento,i) => {
                 return(
                     <>
-                        <Grid key={elemento.id} className="grid-container" container spacing={0}>
+                        <Grid className="grid-container" container spacing={0}>
                             <Grid item md={3} >
                                 <div className="div-img-item">
                                     <img className='img-item' alt="Imagen Item" src={`../${elemento.imagen}`} />    
@@ -39,7 +39,7 @@ const Carrito = () => {
                                     <div className="p-item">Stock disponible: <p className="p-variable">{elemento.stock}</p></div>   
                                 </div>                        
                             </Grid>
-                            <Grid item md={3} >
+                            <Grid item md={3} key={i}>
                                 <div>
                                     <ul className="list-group">
                                         <li className="list-group-item">Sub Total: u$s {(elemento.precio)*(elemento.quantity)}</li>
