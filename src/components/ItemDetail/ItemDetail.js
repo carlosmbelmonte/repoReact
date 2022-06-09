@@ -23,7 +23,7 @@ const ItemDetail = ({data}) => {
         if(botonEstados){
             botonEstados=false;
             return(
-                <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Ver Carrito</Link></Button></div>
+                <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Terminar mi compra</Link></Button></div>
             )
         }
     }
