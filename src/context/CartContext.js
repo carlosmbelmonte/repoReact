@@ -29,6 +29,14 @@ const CartProvider = ({children}) =>{
         let index = cart.findIndex( el => el.nombre === nombre);
         cart.splice(index, 1);
         console.log("El nuevo array de producto es", cart);
+        
+        preciosItem.length = 0;
+        precioTotal=0;
+        for(let i=0;i<cart.length;i++){
+            preciosItem.push( (cart[i].precio)*(cart[i].quantity)*(1.21) )
+        }
+        precioTotal = preciosItem.reduce((a, b) => a + b, 0);
+        console.log("El nuevo precioTotal es", precioTotal);
     }
 
     const clear = () => {
