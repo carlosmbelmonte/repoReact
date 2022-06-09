@@ -6,13 +6,14 @@ import CartContext from '../../context/CartContext';
 
 
 const Cart = () => {
-    const{ cart, clear, removeItem } = useContext(CartContext);
+    const{ cart, clear, removeItem, clearPrecioItems } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(false);
     const[delItem, setDelItem]= useState(false);
 
     const deleteTodo = () => {
         setDeleteAll(true);
         clear();
+        clearPrecioItems();
     }
 
     const deleteItem = (name) => {

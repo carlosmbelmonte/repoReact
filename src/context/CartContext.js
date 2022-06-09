@@ -5,13 +5,17 @@ const CartContext = createContext();
 const CartProvider = ({children}) =>{
     //const [cart, setCart] = useState([]);
     const cart = [];
+    let preciosItem = []; 
+    let precioTotal = 0;
 
     const addItem = (product) =>{
         let isInCart = cart.findIndex( cartItem => cartItem.nombre === product.nombre );
 
         if (isInCart === -1){
             cart.push(product);
-            console.log("Se agrego el producto al carrito: ",cart);  
+            console.log("Se agrego el producto al carrito: ",cart);
+            preciosItem.push( (product.precio)*(product.quantity)*(1.21) )  
+            console.log("el precio del producto es: ",preciosItem);
             return cart  
         }else{
             console.log("El producto ya se encontraba en el carrito"); 
@@ -29,11 +33,18 @@ const CartProvider = ({children}) =>{
         cart.length = 0;
     };
 
+    const clearPrecioItems = () =>{
+        preciosItem.length = 0;
+        console.log("el precio del producto es: ",preciosItem);
+    }
+
     const data={
         cart,
         addItem,
         clear,
-        removeItem
+        removeItem,
+        clearPrecioItems
+        
     };
 
     return(
