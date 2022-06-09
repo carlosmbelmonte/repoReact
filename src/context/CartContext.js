@@ -16,6 +16,8 @@ const CartProvider = ({children}) =>{
             console.log("Se agrego el producto al carrito: ",cart);
             preciosItem.push( (product.precio)*(product.quantity)*(1.21) )  
             console.log("el precio del producto es: ",preciosItem);
+            pTotal();
+            console.log("El total del carrito es: ", precioTotal);
             return cart  
         }else{
             console.log("El producto ya se encontraba en el carrito"); 
@@ -31,19 +33,22 @@ const CartProvider = ({children}) =>{
 
     const clear = () => {
         cart.length = 0;
-    };
-
-    const clearPrecioItems = () =>{
         preciosItem.length = 0;
         console.log("el precio del producto es: ",preciosItem);
+        precioTotal=0;
+        console.log("El total del carrito es: ", precioTotal);
+    };
+
+    const pTotal=()=>{
+        precioTotal = preciosItem.reduce((a, b) => a + b, 0);
+        //return precioTotal;
     }
 
     const data={
         cart,
         addItem,
         clear,
-        removeItem,
-        clearPrecioItems
+        removeItem
         
     };
 
