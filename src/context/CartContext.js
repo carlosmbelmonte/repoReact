@@ -15,42 +15,40 @@ const CartProvider = ({children}) =>{
 
         if (isInCart === -1){
             cart.push(product);           
-            console.log("Se agrego el producto al carrito: ",cart);
             preciosItem.push( (product.precio)*(product.quantity)*(1.21) )  
             quantityItem.push(product.quantity);
 
-            console.log("el precio del producto es: ",preciosItem);
-            console.log("la cantidad del producto: ",quantityItem);
-
             Total("precios");
-            console.log("El total del carrito es: ", precioTotal);
+            Total("cantidades");
             return cart  
         }else{
             console.log("El producto ya se encontraba en el carrito"); 
-        }    
-        //setCart((cart) => [...cart, "HOLAAA"]); //agrego el producto al carrito    
+        }       
     }
 
     const removeItem = (nombre) => {       
         let index = cart.findIndex( el => el.nombre === nombre);
         cart.splice(index, 1);
-        console.log("El nuevo array de producto es", cart);
         
         preciosItem.length = 0;
         precioTotal=0;
+        quantityItem.length = 0;
+        quantityTotal = 0
+
         for(let i=0;i<cart.length;i++){
-            preciosItem.push( (cart[i].precio)*(cart[i].quantity)*(1.21) )
+            preciosItem.push( (cart[i].precio)*(cart[i].quantity)*(1.21) );
+            quantityItem.push(cart[i].quantity);
         }
         precioTotal = preciosItem.reduce((a, b) => a + b, 0);
-        console.log("El nuevo precioTotal es", precioTotal);
+        quantityTotal = quantityItem.reduce((a, b) => a + b, 0); 
     }
 
     const clear = () => {
         cart.length = 0;
         preciosItem.length = 0;
-        console.log("el precio del producto es: ",preciosItem);
+        quantityItem.length = 0;
         precioTotal=0;
-        console.log("El total del carrito es: ", precioTotal);
+        quantityTotal = 0
     }
 
     const Total=(variable)=>{
@@ -60,22 +58,23 @@ const CartProvider = ({children}) =>{
         if(variable==="cantidades"){
             quantityTotal = quantityItem.reduce((a, b) => a + b, 0);    
         }
-        
-        //return precioTotal;
     }
-
-    
-    
-    const sumatoria=()=>{       
-        return precioTotal;
+  
+    const sumatoria=(variable)=>{       
+        if(variable==="precios"){
+            return precioTotal;
+        }
+        if(variable==="cantidades"){
+            return quantityTotal;
+        }
     }
-    
+  
     const data={
         cart,
         addItem,
         clear,
         removeItem,  
-        sumatoria      
+        sumatoria,      
     };
 
     return(

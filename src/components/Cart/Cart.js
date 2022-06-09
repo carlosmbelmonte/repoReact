@@ -80,7 +80,7 @@ const Cart = () => {
         if(condition>0){
             return(
                 <>
-                    <h3 className="h2-item">El precio Total de su compra es: u$s {sumatoria()}</h3>
+                    <h3 className="h2-item">El precio Total de su compra es: u$s {sumatoria("precios")}</h3>
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
                     </div>
@@ -93,6 +93,7 @@ const Cart = () => {
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn'><Link to ="/products" className="link-end">VER PRODUCTOS</Link></Button>    
                     </div>
+                    {console.log("items actuales en page cart: ",sumatoria("cantidades"))}
                 </>
             )
         }
