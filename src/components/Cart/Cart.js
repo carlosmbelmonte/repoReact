@@ -1,10 +1,10 @@
 import {Grid} from '@mui/material';
-import '../pages/styles/carrito.css'
+import './Cart.css';
 import Button from '@mui/material/Button';
 import { useContext, useState } from 'react';
-import CartContext from '../context/CartContext';
+import CartContext from '../../context/CartContext';
 
-const Carrito = () => {
+const Cart = () => {
     const{ cart, clear, removeItem } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(true);
     const[delItem, setDelItem]= useState(false);
@@ -94,4 +94,4 @@ const Carrito = () => {
     )
 }
 
-export default Carrito
+export default Cart

@@ -7,7 +7,7 @@ import Products from './pages/products';
 import Home from './pages/home';
 import Detalle from './pages/detalleProducto';
 import Categoria from './pages/categorias';
-import Carrito from './pages/carrito';
+import Cart from './components/Cart/Cart';
 import {CartProvider} from './context/CartContext';
 
 function App() { 
@@ -32,7 +32,7 @@ function App() {
                   <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
                   <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
                   <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
-                  <Route exact path='/cart' element={<Carrito/>}/>        
+                  <Route exact path='/cart' element={<Cart/>}/>        
               </Routes>
             </Container>
           </BrowserRouter>  
