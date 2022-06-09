@@ -4,13 +4,14 @@ import Button from '@mui/material/Button';
 import { useContext, useState } from 'react';
 import CartContext from '../../context/CartContext';
 
+
 const Cart = () => {
     const{ cart, clear, removeItem } = useContext(CartContext);
-    const[deleteAll, setDeleteAll]= useState(true);
+    const[deleteAll, setDeleteAll]= useState(false);
     const[delItem, setDelItem]= useState(false);
 
     const deleteTodo = () => {
-        setDeleteAll(false);
+        setDeleteAll(true);
         clear();
     }
 
@@ -20,7 +21,7 @@ const Cart = () => {
         setDelItem(true);
     }
 
-    const otrogridMap = () => {
+    const gridMap = () => {
         return(
             cart.map( (elemento,i) => {
                 return(
@@ -56,36 +57,34 @@ const Cart = () => {
                         </Grid>
                     </>
                 ) 
-            })
+            })                                               
         )   
     }
 
     const imprimir = () => {
-        if(deleteAll === true && cart.length !== 0){
+        if(deleteAll === false && cart.length !== 0){
             if(delItem===false){
                 return(
-                    otrogridMap()
+                    gridMap()                 
                 )    
             }else{
                 setDelItem(false) 
                 return(
-                    otrogridMap()    
+                    gridMap()                        
                 )      
-            }                
+            }                            
         }else{
             return(
                 <h2>El carrito esta vacio!!!</h2>   
             )
         }
-        
-
-
     }
 
     return(
         <div className='cart-container'>
             {console.log("Productos existentes en PAGINA CARRITO", cart)}
             {imprimir()} 
+            {/*printPrecio(1234)*/}
             <div className="cart-delete-btn">
                 <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
             </div>            
