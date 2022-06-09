@@ -67,3 +67,8 @@
 .div-btn-ItemDelete .cart__btnItem:hover{
     background-color: lightslategray;
 }
+
+.link-end{
+    color: white;
+    text-decoration:none;
+}

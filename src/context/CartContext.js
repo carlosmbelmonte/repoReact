@@ -56,8 +56,7 @@ const CartProvider = ({children}) =>{
         cart,
         addItem,
         clear,
-        removeItem
-        
+        removeItem,        
     };
 
     return(

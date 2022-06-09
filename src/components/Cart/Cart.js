@@ -3,7 +3,7 @@ import './Cart.css';
 import Button from '@mui/material/Button';
 import { useContext, useState } from 'react';
 import CartContext from '../../context/CartContext';
-
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const{ cart, clear, removeItem } = useContext(CartContext);
@@ -73,9 +73,26 @@ const Cart = () => {
                     gridMap()                        
                 )      
             }                            
+        }
+    }
+
+    function DisplayElements({condition}){
+        if(condition>0){
+            return(
+                <>
+                    <div className="cart-delete-btn">
+                        <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
+                    </div>
+                </>
+            )
         }else{
             return(
-                <h2>El carrito esta vacio!!!</h2>   
+                <>
+                    <h2>No hay productos en el carrito!!!</h2> 
+                    <div className="cart-delete-btn">
+                        <Button variant="contained" className='cart__btn'><Link to ="/products" className="link-end">VER PRODUCTOS</Link></Button>    
+                    </div>
+                </>
             )
         }
     }
@@ -84,10 +101,7 @@ const Cart = () => {
         <div className='cart-container'>
             {console.log("Productos existentes en PAGINA CARRITO", cart)}
             {imprimir()} 
-            {/*printPrecio(1234)*/}
-            <div className="cart-delete-btn">
-                <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
-            </div>            
+            <DisplayElements condition={cart.length}/>                       
         </div>
         
     )
