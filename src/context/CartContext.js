@@ -3,7 +3,6 @@ import { createContext } from "react";
 const CartContext = createContext();
 
 const CartProvider = ({children}) =>{
-    //const [cart, setCart] = useState([]);
     const cart = [];
     let preciosItem = []; 
     let precioTotal = 0;
@@ -45,18 +44,23 @@ const CartProvider = ({children}) =>{
         console.log("el precio del producto es: ",preciosItem);
         precioTotal=0;
         console.log("El total del carrito es: ", precioTotal);
-    };
+    }
 
     const pTotal=()=>{
         precioTotal = preciosItem.reduce((a, b) => a + b, 0);
         //return precioTotal;
     }
-
+    
+    const sumatoria=()=>{       
+        return precioTotal;
+    }
+    
     const data={
         cart,
         addItem,
         clear,
-        removeItem,        
+        removeItem,  
+        sumatoria      
     };
 
     return(

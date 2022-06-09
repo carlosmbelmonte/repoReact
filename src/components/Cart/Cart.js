@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const{ cart, clear, removeItem } = useContext(CartContext);
+    const{ cart, clear, removeItem, sumatoria } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(false);
     const[delItem, setDelItem]= useState(false);
 
@@ -80,6 +80,7 @@ const Cart = () => {
         if(condition>0){
             return(
                 <>
+                    <h3 className="h2-item">El precio Total de su compra es: u$s {sumatoria()}</h3>
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
                     </div>
@@ -101,7 +102,7 @@ const Cart = () => {
         <div className='cart-container'>
             {console.log("Productos existentes en PAGINA CARRITO", cart)}
             {imprimir()} 
-            <DisplayElements condition={cart.length}/>                       
+            <DisplayElements condition={cart.length}/>                      
         </div>
         
     )
