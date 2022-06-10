@@ -56,7 +56,8 @@ const CartProvider = ({children}) =>{
             precioTotal = preciosItem.reduce((a, b) => a + b, 0);    
         }
         if(variable==="cantidades"){
-            quantityTotal = quantityItem.reduce((a, b) => a + b, 0);    
+            quantityTotal = quantityItem.reduce((a, b) => a + b, 0);  
+            return quantityTotal;
         }
     }
   
@@ -74,8 +75,9 @@ const CartProvider = ({children}) =>{
         addItem,
         clear,
         removeItem,  
-        sumatoria,      
-    };
+        sumatoria,
+        Total    
+    }
 
     return(
         <CartContext.Provider value={data}>
