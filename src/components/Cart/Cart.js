@@ -84,6 +84,7 @@ const Cart = () => {
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
                     </div>
+                    {console.log("items actuales en page cart: ",sumatoria("cantidades"))}
                 </>
             )
         }else{

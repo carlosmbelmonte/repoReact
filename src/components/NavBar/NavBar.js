@@ -6,10 +6,19 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 
 let variableT;
-const NavBar = ({children}) => {
+const NavBar = () => {
+    const{ sumatoria } = useContext(CartContext);
+    const sum =()=>{
+        return sumatoria("cantidades")
+    }
     return (
+        <>
+        {console.log("cantidades en navbar",sum())}
         <AppBar position="static">
             <Toolbar>
             <Grid container spacing={0}>
@@ -73,11 +82,13 @@ const NavBar = ({children}) => {
                     justifyContent="flex-end"
                     alignItems="center"
                 >                                  
-                    {children}                       
+                    <CartWidget total={[]}/>                           
                 </Grid>
             </Grid>                        
             </Toolbar>
         </AppBar>
+        </>
+        
     ) 
 }
 

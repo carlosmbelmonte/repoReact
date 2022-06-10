@@ -1,7 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import {Container} from '@mui/material';
-import CartWidget from './components/CartWidget/CartWidget';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './pages/products';
 import Home from './pages/home';
@@ -10,15 +9,16 @@ import Categoria from './pages/categorias';
 import Cart from './components/Cart/Cart';
 import {CartProvider} from './context/CartContext';
 
+
 function App() { 
+
+
   return (
     //JSX   
       <div>
         <CartProvider>
           <BrowserRouter>
-            <NavBar>
-              <CartWidget/>
-            </NavBar>
+            <NavBar/>
 
             <Container>
               <Routes>
@@ -36,23 +36,8 @@ function App() {
               </Routes>
             </Container>
           </BrowserRouter>  
-        </CartProvider>
-        
-        {/*
-        <NavBar>
-          <CartWidget/>
-        </NavBar>
-        <Container>
-          <ItemListContainer title={"Automatizacion Industrial"} arrayP={productos}/> 
-          {/*<ItemListContainer title={"Electronica de potencia"} arrayP={[]}/>*}
-          {<ItemDetailContainer title={"Detail Container"} arrayX={productoBaliza}/>}           
-        </Container>
-        */}  
+        </CartProvider>  
       </div>
-     
-    
-
-
   );
 }
 
