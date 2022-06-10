@@ -2,7 +2,7 @@ import {Grid} from '@mui/material';
 import './Cart.css';
 import Button from '@mui/material/Button';
 import { useContext, useState } from 'react';
-import CartContext from '../../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
@@ -104,7 +104,7 @@ const Cart = () => {
         <div className='cart-container'>
             {console.log("Productos existentes en PAGINA CARRITO", cart)}
             {imprimir()} 
-            <DisplayElements condition={cart.length}/>                      
+            <DisplayElements condition={sumatoria("cantidades")}/>                      
         </div>
         
     )

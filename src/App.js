@@ -7,7 +7,7 @@ import Home from './pages/home';
 import Detalle from './pages/detalleProducto';
 import Categoria from './pages/categorias';
 import Cart from './components/Cart/Cart';
-import {CartProvider} from './context/CartContext';
+import {CartContextProvider} from './context/CartContext';
 
 
 function App() { 
@@ -16,7 +16,7 @@ function App() {
   return (
     //JSX   
       <div>
-        <CartProvider>
+        <CartContextProvider>
           <BrowserRouter>
             <NavBar/>
 
@@ -36,7 +36,7 @@ function App() {
               </Routes>
             </Container>
           </BrowserRouter>  
-        </CartProvider>  
+        </CartContextProvider>  
       </div>
   );
 }
