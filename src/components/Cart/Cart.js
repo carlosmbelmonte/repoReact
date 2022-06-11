@@ -84,7 +84,7 @@ const Cart = () => {
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn' onClick={deleteTodo}>Vaciar carrito</Button>    
                     </div>
-                    {console.log("items actuales en page cart: ",sumatoria("cantidades"))}
+                    {/*console.log("items actuales en page cart: ",sumatoria("cantidades"))*/}
                 </>
             )
         }else{
@@ -94,7 +94,7 @@ const Cart = () => {
                     <div className="cart-delete-btn">
                         <Button variant="contained" className='cart__btn'><Link to ="/products" className="link-end">VER PRODUCTOS</Link></Button>    
                     </div>
-                    {console.log("items actuales en page cart: ",sumatoria("cantidades"))}
+                    {/*console.log("items actuales en page cart: ",sumatoria("cantidades"))*/}
                 </>
             )
         }
@@ -102,9 +102,9 @@ const Cart = () => {
 
     return(
         <div className='cart-container'>
-            {console.log("Productos existentes en PAGINA CARRITO", cart)}
+            {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
             {imprimir()} 
-            <DisplayElements condition={sumatoria("cantidades")}/>                      
+            <DisplayElements condition={cart.length}/>                      
         </div>
         
     )
