@@ -8,18 +8,16 @@ import { CartContext } from '../../context/CartContext';
  
 const CartWidget = () => { 
     const{ prodsInCart } = useContext(CartContext);
-    
-    //let condition = 10;
 
-    function DisplayCartWidget(){
-        if(prodsInCart > 0){
+    function DisplayCartWidget({condition}){
+        if(condition > 0){
             return(
                 <>
                     <div className="container-cart">
                         <Button color="inherit" className='carrito__btn'>
                             <Link to ="/cart" className="link-end">
                                 <ShoppingCartTwoToneIcon />                  
-                                    
+                                {<h2 className='count-items'>{prodsInCart}</h2>}    
                             </Link>                                  
                         </Button>
                     </div>    
@@ -36,14 +34,7 @@ const CartWidget = () => {
     
     return (
         <>
-            <div className="container-cart">
-                <Button color="inherit" className='carrito__btn'>
-                    <Link to ="/cart" className="link-end">
-                        <ShoppingCartTwoToneIcon />                  
-                        {<h2 className='count-items'>{prodsInCart}</h2>}     
-                    </Link>                                  
-                </Button>
-            </div>
+           <DisplayCartWidget condition={prodsInCart}/> 
         </>
     ) 
 }
