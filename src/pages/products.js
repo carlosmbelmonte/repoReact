@@ -1,24 +1,14 @@
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import nuevo from "../utils/nuevoMock";
 import { useState, useEffect } from 'react';
+import GetProducts from "../components/ItemCollection/ItemCollection";
 
 const Products = () => {
     const [prodX, setProd] = useState([]);
-   
-    const getProductos = () =>{
-        return new Promise ( (resolve,reject)=>{
-            setTimeout(() => {
-                resolve(nuevo)        
-            },500);
-        });
-    };
+    const res = GetProducts();
 
     useEffect( () => {
-        getProductos()
-            .then((res) => {
-                setProd(res);
-            })    
-    },[]);// eslint-disable-line
+        setProd(res);   
+    },[res]);// eslint-disable-line
 
     const filtro1 = prodX.filter( (produc1) => {
         return produc1.category === "automatizacion"
