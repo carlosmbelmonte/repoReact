@@ -1,34 +1,25 @@
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import nuevo from "../utils/nuevoMock";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import GetProducts from "../components/ItemCollection/ItemCollection";
 
 const Categoria = () => { 
     const [categ, setCateg] = useState([]);
     const [title, setTitle] = useState("");   
     const { category }=useParams();
-   
-    const getProductos = () =>{
-        return new Promise ( (resolve,reject)=>{          
-            resolve(nuevo)                    
-        });
-    };
+    const res = GetProducts();
 
     useEffect( () => {
         setCateg([]);
-        console.log("category: ", category);
         if(category==="automatizacion"){
+            filterByCategory(res)
             setTitle("Automatizacion Industrial");
         }
         if(category==="medidores"){
+            filterByCategory(res)
             setTitle("Medidores Trifasicos");
-        }
-
-        getProductos()
-            .then((res) => {
-                filterByCategory(res)
-            })    
-    },[category]);// eslint-disable-line
+        } 
+    },[category,res]);// eslint-disable-line
 
     const filterByCategory = (array) => {    
         setCateg(array.filter((rec) => rec.category === category))          

@@ -1,4 +1,3 @@
-//import { async } from "@firebase/util";
 import { collection, getDocs } from "firebase/firestore";   
 import db from "../../utils/firebaseConfig";
 import { useEffect, useState } from "react";
