@@ -1,24 +1,24 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { GetProduct } from "../ItemCollection/ItemCollection";
 
-const ItemDetailContainer = ({title, arrayX}) => {
+const ItemDetailContainer = ({title}) => {
     const [detail , setDetail] = useState({})
-    const { id }= useParams();
-
-    const prodFilter = arrayX.find( (detail) => {
-        return detail.id === parseInt(id)
-    })
+    const { id }= useParams();   
 
     useEffect(() => {
-        setDetail(prodFilter)
+        GetProduct(id)
+                   .then((prod)=>{
+                        setDetail(prod)
+                   })  
     }, [id]); // eslint-disable-line
 
     return (
         <>
             <h2>{title}</h2>
             <ItemDetail data={detail}/>
-            {/*console.log(detail)*/}
+            {console.log(detail)}
         </>  
     ) 
 }

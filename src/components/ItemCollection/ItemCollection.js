@@ -1,26 +1,37 @@
 import { collection, getDocs } from "firebase/firestore";   
 import db from "../../utils/firebaseConfig";
 import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
 
 const GetProducts = () =>{
-    const [val, setVal] = useState([]);    
+    const [vals, setVals] = useState([]);    
 
-    const getAnswer = async () =>{
+    const getAnswers = async () =>{
         const querySnapshot = await getDocs(collection(db,"productos"));
         const productList = querySnapshot.docs.map((doc)=>{       
-            let product = doc.data();
-            product.id = parseInt(doc.id);
-            return product
+            let products = doc.data();
+            products.id = parseInt(doc.id);
+            return products
         }); 
-        setVal(productList);   
+        setVals(productList);   
     };
 
     useEffect(() => {
-        getAnswer();
+        getAnswers();
     },[]);
 
     //return console.log("imprimo lista: ",val)
-    return val
+    return vals
+}
+
+const GetProduct = async(id) =>{
+    const docRef = doc(db,"productos",id);
+    const docSnapshot = await getDoc(docRef);
+    let product = docSnapshot.data();
+    product.id = docSnapshot.id;
+    //console.log(product)
+    return product
 }
 
 export default GetProducts
+export {GetProduct}
