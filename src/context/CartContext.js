@@ -10,6 +10,8 @@ const CartContextProvider = ({children}) =>{
 
     const [prodsInCart, setProdsInCart] = useState(0);
     const [prodsPrice, setProdsPrice] = useState(0);
+
+    const [boton,setBoton]=useState(false);//-------->Sirve para setear los botones del carrito en disabled o enabled
     
     const addItem = (product) =>{
         let isInCart = cart.findIndex( cartItem => cartItem.nombre === product.nombre );
@@ -58,7 +60,8 @@ const CartContextProvider = ({children}) =>{
             return prodsInCart;
         }
     }
-  
+
+      
     const data={
         cart,
         addItem,
@@ -66,7 +69,9 @@ const CartContextProvider = ({children}) =>{
         removeItem,  
         sumatoria, 
         prodsInCart,
-        prodsPrice   
+        prodsPrice,
+        setBoton,
+        boton   
     }
 
     return(
