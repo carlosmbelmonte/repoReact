@@ -8,7 +8,7 @@ import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({data}) => {
     const[showState, setShowState]= useState(false);
-    const{ addItem} = useContext(CartContext);
+    const{ addItem,setBoton} = useContext(CartContext);//-------->setBoton sirve para setear los botones del carrito
     let botonEstados;
 
     const agregarCantidadAlCarrito = (cantidad) => {
@@ -22,6 +22,7 @@ const ItemDetail = ({data}) => {
     const irCarrito = () => {
         if(botonEstados){
             botonEstados=false;
+            setBoton(true);//-------->setBoton sirve para setear los botones del carrito como Enable cada vez que se agrega Items
             return(
                 <div className="container-btn"><Button variant="contained" className="btn__end"><Link to ="/cart" className="link-end">Terminar mi compra</Link></Button></div>
             )
