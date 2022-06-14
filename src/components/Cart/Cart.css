@@ -72,3 +72,35 @@
     color: white;
     text-decoration:none;
 }
+
+.form-container{
+    border: 1px solid #b3b3b3;
+    margin-top: 1rem;
+    padding: 0px 1rem 1rem 1rem;
+}
+.form__h2{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.form__div{
+    padding:0.25rem 0px 0.25rem 0px;
+}
+.form__btncontainer{
+    display: inline-flex;
+    align-items: center;
+    padding:0.25rem 0px 0.25rem 0px;
+}
+.form__divbtn{
+    display: inline-flex;
+    padding-right: 0.5rem;
+}
+.form__label{
+    display: inline-block;
+    width: 9rem;
+}
+.form__input{
+    width: 13rem;
+}
+.form-container .form__btn:hover{
+    background-color: lightslategray;
+}
