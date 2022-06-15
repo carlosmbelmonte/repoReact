@@ -12,6 +12,10 @@ const Cart = () => {
     const[delItem, setDelItem]= useState(false);
 
     const[endShop, setEndShop]= useState(boton);
+    const [validation, setValidation] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
 
     const deleteTodo = () => {
         setDeleteAll(true);
@@ -80,8 +84,55 @@ const Cart = () => {
         }
     }
 
-    const ejecutarCompra = () => {
-        //setEndShop(false);
+
+    const displayForm = (flag) =>{
+        if(flag>0){
+            return(
+                <div>
+                    <form className="form-container" onSubmit={handleSubmit}>
+                            <h2 className="form__h2">Complete sus datos</h2>
+                            <div className="form__div">
+                                <label className="form__label" >Nombre y Apellido</label>
+                                <input className="form__input" type="text" id="name" name="name" value={name} placeholder="Ingrese su Nombre/Apellido" onChange={(e) => setName(e.target.value)}/>
+                            </div>
+                            <div className="form__div">
+                                <label className="form__label" >Telefono</label>
+                                <input className="form__input" type="number" id="phone" name="phone" value={phone} placeholder="Ingrese su Telefono" onChange={(e) => setPhone(e.target.value)}/>
+                            </div>
+                            <div className="form__div">
+                                <label className="form__label" >Email</label>
+                                <input className="form__input" type="email" id="email" name="email" value={email} placeholder="Ingrese su Email"  onChange={(e) => setEmail(e.target.value)}/>
+                            </div>
+                            {(validation === ''? '': <div className="form__validation">{validation}</div>)}
+                            <div className="form__btncontainer">    
+                                <div className="form__divbtn">
+                                    {/*<Button variant="contained" className='form__btn' onClick={()=>ejecutarCompra()}>Finalizar compra</Button>*/}   
+                                    <input type="submit" className="form__submit" value="Finalizar compra" />
+                                </div>
+                                <div className="form__divbtn"> 
+                                    {/*<Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />}>Vaciar carrito</Button>*/}    
+                                    <DisplayBtnDelete condition={endShop} posicion={"general"}/>
+                                </div>    
+                            </div>
+                        </form>
+                </div>
+            )    
+        }
+        
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        setValidation("");
+        if (!name || !phone || !email) {
+            setValidation("Por favor llene los campos");
+            return false;
+        }
+        const newOrder = {
+            buyer: { name, phone, email }}
+        console.log(newOrder);
+        setEndShop(false);
         setBoton(false);
     }
 
@@ -89,37 +140,7 @@ const Cart = () => {
         if(condition>0){
             return(
                 <>
-                    <h3 className="h2-item">El precio Total de su compra es: u$s {sumatoria("precios")}</h3>
-                    {/*<div className="cart-delete-btn">
-                            
-                    </div>*/}
-                    {/*console.log("items actuales en page cart: ",sumatoria("cantidades"))*/}
-
-                    <form className="form-container">
-                        <h2 className="form__h2">Complete sus datos</h2>
-                        <div className="form__div">
-                            <label className="form__label">Nombre y Apellido</label>
-                            <input className="form__input" type="text" placeholder="Ingrese su Nombre/Apellido"/>
-                        </div>
-                        <div className="form__div">
-                            <label className="form__label">Telefono</label>
-                            <input className="form__input" type="number" placeholder="Ingrese su Telefono"/>
-                        </div>
-                        <div className="form__div">
-                            <label className="form__label">Email</label>
-                            <input className="form__input" type="email" placeholder="Ingrese su Email"/>
-                        </div>
-                        <div className="form__btncontainer">
-                            {/*<input type="submit" value="Finalizar compra" />*/}
-                            <div className="form__divbtn">
-                                <Button variant="contained" className='form__btn' onClick={()=>ejecutarCompra()}>Finalizar compra</Button>    
-                            </div>
-                            <div className="form__divbtn"> 
-                                {/*<Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />}>Vaciar carrito</Button>*/}    
-                                <DisplayBtnDelete condition={endShop} posicion={"general"}/>
-                            </div>    
-                        </div>
-                    </form>
+                    <h3 className="h2-item">El precio Total de su compra es: u$s {sumatoria("precios")}</h3>                
                 </>
             )
         }else{
@@ -136,7 +157,7 @@ const Cart = () => {
     }
 
     function DisplayBtnDelete({condition, posicion, nVar}){
-        if(condition===true){
+        if(condition>0){
             if(posicion === "general"){
                 return(
                     <>
@@ -175,7 +196,8 @@ const Cart = () => {
         <div className='cart-container'>
             {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
             {imprimir()} 
-            <DisplayElements condition={cart.length}/>                      
+            <DisplayElements condition={cart.length}/>  
+            {displayForm(cart.length)}                   
         </div>
         
     )
