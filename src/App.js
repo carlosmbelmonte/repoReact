@@ -8,7 +8,7 @@ import Detalle from './pages/detalleProducto';
 import Categoria from './pages/categorias';
 import Cart from './components/Cart/Cart';
 import {CartContextProvider} from './context/CartContext';
-
+import CompradoPage from './pages/compraRealizada';
 
 function App() { 
 
@@ -32,7 +32,8 @@ function App() {
                   <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
                   <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
                   <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
-                  <Route exact path='/cart' element={<Cart/>}/>        
+                  <Route exact path='/cart' element={<Cart/>}/> 
+                  <Route path="comprado/:orderId" element={<CompradoPage />} />       
               </Routes>
             </Container>
           </BrowserRouter>  

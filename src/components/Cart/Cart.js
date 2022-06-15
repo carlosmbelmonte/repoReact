@@ -5,17 +5,19 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
+import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
-    const{ cart, clear, removeItem, sumatoria,boton, setBoton } = useContext(CartContext);
+    const{ cart, clear, removeItem, sumatoria } = useContext(CartContext);
     const[deleteAll, setDeleteAll]= useState(false);
     const[delItem, setDelItem]= useState(false);
 
-    const[endShop, setEndShop]= useState(boton);
     const [validation, setValidation] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
+
+    const navigate = useNavigate();
 
     const deleteTodo = () => {
         setDeleteAll(true);
@@ -55,8 +57,8 @@ const Cart = () => {
                                         <li className="list-group-item">TOTAL: u$s {(elemento.precio)*(elemento.quantity)*(1.21)}</li>
                                         <li className="list-group-item">
                                             <div className="div-btn-ItemDelete">
-                                                {/*<Button variant="contained" className="cart__btnItem" onClick={() => deleteItem(elemento.nombre)} startIcon={<DeleteIcon />}>Eliminar Producto</Button>*/}
-                                                <DisplayBtnDelete condition={endShop} posicion={"individual"} nVar={elemento.nombre}/>
+                                                <Button variant="contained" className="cart__btnItem" onClick={() => deleteItem(elemento.nombre)} startIcon={<DeleteIcon />}>Eliminar Producto</Button>
+                                                {/*<DisplayBtnDelete condition={endShop} posicion={"individual"} nVar={elemento.nombre}/>*/}
                                             </div>
                                         </li>
                                     </ul>     
@@ -110,8 +112,8 @@ const Cart = () => {
                                     <input type="submit" className="form__submit" value="Finalizar compra" />
                                 </div>
                                 <div className="form__divbtn"> 
-                                    {/*<Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />}>Vaciar carrito</Button>*/}    
-                                    <DisplayBtnDelete condition={endShop} posicion={"general"}/>
+                                    {<Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />}>Vaciar carrito</Button>}    
+                                    {/*<DisplayBtnDelete condition={endShop} posicion={"general"}/>*/}
                                 </div>    
                             </div>
                         </form>
@@ -135,9 +137,9 @@ const Cart = () => {
             date: new Date(),
             total: sumatoria("precios")
         }
-        console.log(newOrder);
-        setEndShop(false);
-        setBoton(false);
+        console.log(newOrder);       
+        navigate(`/comprado/1`);
+        clear();
     }
 
     function DisplayElements({condition}){
@@ -157,42 +159,6 @@ const Cart = () => {
                     {/*console.log("items actuales en page cart: ",sumatoria("cantidades"))*/}
                 </>
             )
-        }
-    }
-
-    function DisplayBtnDelete({condition, posicion, nVar}){
-        if(condition>0){
-            if(posicion === "general"){
-                return(
-                    <>
-                        <Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />}>Vaciar carrito</Button>
-                    </>
-                )    
-            }
-            if(posicion === "individual"){
-                return(
-                    <>
-                        <Button variant="contained" className="cart__btnItem" onClick={() => deleteItem(nVar)} startIcon={<DeleteIcon />}>Eliminar Producto</Button>
-                    </>
-                )    
-            }
-            
-        }else{
-            if(posicion === "general"){
-                return(
-                    <>
-                        <Button variant="contained" className='form__btn' onClick={deleteTodo} startIcon={<DeleteIcon />} disabled>Vaciar carrito</Button>
-                    </>
-                )    
-            }
-            if(posicion === "individual"){
-                return(
-                    <>
-                        <Button variant="contained" className="cart__btnItem" onClick={() => deleteItem(nVar)} startIcon={<DeleteIcon />} disabled>Eliminar Producto</Button>
-                    </>
-                )    
-            }
-            
         }
     }
 
