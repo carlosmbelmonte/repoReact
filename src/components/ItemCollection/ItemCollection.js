@@ -40,6 +40,13 @@ const saveData = async(newOr) =>{
     return orderDoc.id
 }
 
+const GetOrder = async(id) =>{
+    const docOrder = await getDoc( doc(db,"ordenes",id) ); 
+    let order = docOrder.data();
+    return order
+}
+
 export default GetProducts
 export {GetProduct}
 export {saveData}
+export {GetOrder}
