@@ -130,7 +130,11 @@ const Cart = () => {
             return false;
         }
         const newOrder = {
-            buyer: { name, phone, email }}
+            buyer: { name, phone, email },
+            items: cart.map((item) => ({  id: item.id, name: item.nombre, quantity: item.quantity, price: item.precio })),
+            date: new Date(),
+            total: sumatoria("precios")
+        }
         console.log(newOrder);
         setEndShop(false);
         setBoton(false);
