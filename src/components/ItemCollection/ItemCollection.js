@@ -1,10 +1,11 @@
-import { collection, getDocs } from "firebase/firestore";   
+import { addDoc, collection, getDocs } from "firebase/firestore";   
 import db from "../../utils/firebaseConfig";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 
+
 const GetProducts = () =>{
-    const [vals, setVals] = useState([]);    
+    const [vals, setVals] = useState([]);   
 
     const getAnswers = async () =>{
         const querySnapshot = await getDocs(collection(db,"productos"));
@@ -33,5 +34,12 @@ const GetProduct = async(id) =>{
     return product
 }
 
+const saveData = async(newOr) =>{
+    const orderDoc = await addDoc(collection(db,"ordenes"),newOr);
+    console.log("nueva orden en cARTCONTEX",orderDoc.id)
+    return orderDoc.id
+}
+
 export default GetProducts
 export {GetProduct}
+export {saveData}

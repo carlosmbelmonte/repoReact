@@ -6,6 +6,8 @@ import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useNavigate} from "react-router-dom";
+import { saveData } from '../ItemCollection/ItemCollection';
+
 
 const Cart = () => {
     const{ cart, clear, removeItem, sumatoria } = useContext(CartContext);
@@ -137,9 +139,13 @@ const Cart = () => {
             date: new Date(),
             total: sumatoria("precios")
         }
-        console.log(newOrder);       
-        navigate(`/comprado/1`);
-        clear();
+        console.log(newOrder);
+        saveData(newOrder)
+            .then((respuesta)=>{
+                console.log("1 - Respuesta mostrada en cart: ",respuesta);
+                navigate(`/comprado/${respuesta}`);
+                clear();
+            });        
     }
 
     function DisplayElements({condition}){
