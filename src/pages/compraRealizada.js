@@ -1,6 +1,7 @@
 import { GetOrder } from "../components/ItemCollection/ItemCollection";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import './styles/compraRealizada.css'
 
 const CompradoPage = () => {
     const [orden , setOrden] = useState({})
@@ -22,28 +23,30 @@ const CompradoPage = () => {
             {console.log(orden)}
             <p>{orden.buyer.name}, gracias por su compra</p>
             
-            <table>
-                <tbody>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Subtotal</th>
-                    <th>Total</th>
-                </tr>
-                {orden.items.map((product) => {
-                    return (
-                    <tr key={product.id}>
-                        <td>{product.name}</td>
-                        <td>{product.quantity}</td>
-                        <td>u$s {product.price}</td>
-                        <td>u$s {(product.price)*(product.quantity)*(1.21)}</td>
+                <table className="tabla__contenido">
+                    <tbody>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Total</th>
                     </tr>
-                    );
-                })}
-                </tbody>
-                
-            </table>
-            <p>El precio total FINAL es: u$s {orden.total}</p>
+                    {orden.items.map((product) => {
+                        return (
+                        <tr key={product.id}>
+                            <td>{product.name}</td>
+                            <td>{product.quantity}</td>
+                            <td>u$s {product.price}</td>
+                            <td>u$s {(product.price)*(product.quantity)*(1.21)}</td>
+                        </tr>
+                        );
+                    })}
+                    </tbody>
+                    
+                </table>
+                <p>El precio total FINAL es: u$s {orden.total}</p>                
+                <p>(***Nota: El precio total de los productos incluye IVA)</p> 
+
         </>
         
     )

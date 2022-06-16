@@ -14,6 +14,10 @@ const ItemDetailContainer = ({title}) => {
                    })  
     }, [id]); // eslint-disable-line
 
+    if (!detail.id) {
+        return <p>Cargando...</p>;
+    }
+
     return (
         <>
             <h2>{title}</h2>
