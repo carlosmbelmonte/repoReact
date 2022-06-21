@@ -11,8 +11,10 @@ const printFondo = () => {
                 <section>
                     <article>
                         <h2>Somos lideres en instalaciones y equipamiento industrial</h2>
-                            <Button variant="contained"><Link to ="/products">Conocé más</Link></Button>       
-                    </article>   
+                        <div className="home_container">
+                            <Button variant="contained" className="home__btn"><Link to ="/products" className="link-end">Conocé más</Link></Button>                              
+                        </div>
+                            </article>   
                 </section>
             </main>           
         </>

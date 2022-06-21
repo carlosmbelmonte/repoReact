@@ -1,3 +1,10 @@
 .img__home{
     width: 100%;
 }
+.link-end{
+    color: white;
+    text-decoration:none;
+}
+.home_container .home__btn:hover{
+    background-color: lightslategray;
+}
