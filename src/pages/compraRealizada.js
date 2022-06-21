@@ -21,7 +21,7 @@ const CompradoPage = () => {
         <>
             <h1>Gracias por su compra</h1>
             {console.log(orden)}
-            <p>{orden.buyer.name}, gracias por su compra</p>
+            <p>{orden.buyer.name}, gracias por su compra. El ID de su compra es el siguiente: {orden.id}</p>
             
                 <table className="tabla__contenido">
                     <tbody>
