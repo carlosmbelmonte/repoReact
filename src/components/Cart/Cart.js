@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useNavigate} from "react-router-dom";
 import { saveData } from '../ItemCollection/ItemCollection';
+import {Container} from '@mui/material';
 
 
 const Cart = () => {
@@ -169,12 +170,17 @@ const Cart = () => {
     }
 
     return(
-        <div className='cart-container'>
-            {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
-            {imprimir()} 
-            <DisplayElements condition={cart.length}/>  
-            {displayForm(cart.length)}                   
-        </div>
+        <>
+            <Container>
+                <div className='cart-container'>
+                    {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
+                    {imprimir()} 
+                    <DisplayElements condition={cart.length}/>  
+                    {displayForm(cart.length)}                   
+                </div>    
+            </Container>
+        </>
+        
         
     )
 }

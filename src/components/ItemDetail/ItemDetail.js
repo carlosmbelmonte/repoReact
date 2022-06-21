@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
+
 const ItemDetail = ({data}) => {
     const[showState, setShowState]= useState(false);
     const{ addItem} = useContext(CartContext);

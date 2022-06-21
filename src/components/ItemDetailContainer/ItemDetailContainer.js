@@ -2,6 +2,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GetProduct } from "../ItemCollection/ItemCollection";
+import {Container} from '@mui/material';
 
 const ItemDetailContainer = ({title}) => {
     const [detail , setDetail] = useState({})
@@ -20,9 +21,12 @@ const ItemDetailContainer = ({title}) => {
 
     return (
         <>
-            <h2>{title}</h2>
-            <ItemDetail data={detail}/>
-            {console.log(detail)}
+            <Container>
+                <h2>{title}</h2>
+                <ItemDetail data={detail}/>
+                {console.log(detail)}     
+            </Container>
+            
         </>  
     ) 
 }

@@ -1,6 +1,5 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import {Container} from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './pages/products';
 import Home from './pages/home';
@@ -18,9 +17,7 @@ function App() {
       <div>
         <CartContextProvider>
           <BrowserRouter>
-            <NavBar/>
-
-            <Container>
+            <NavBar/>           
               <Routes>
                   <Route exact path='/' element={<Products/>}/> 
                   <Route exact path='/home' element={<Home/>}/>
@@ -34,8 +31,7 @@ function App() {
                   <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
                   <Route exact path='/cart' element={<Cart/>}/> 
                   <Route path="comprado/:orderId" element={<CompradoPage />} />       
-              </Routes>
-            </Container>
+              </Routes>            
           </BrowserRouter>  
         </CartContextProvider>  
       </div>

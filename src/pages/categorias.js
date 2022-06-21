@@ -2,6 +2,7 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import GetProducts from "../components/ItemCollection/ItemCollection";
+import {Container} from '@mui/material';
 
 const Categoria = () => { 
     const [categ, setCateg] = useState([]);
@@ -27,7 +28,10 @@ const Categoria = () => {
     
     return(
         <>
-            <ItemListContainer title={title} arrayP={categ}/>
+            <Container>
+                <ItemListContainer title={title} arrayP={categ}/>    
+            </Container>
+            
         </>        
     )
 }
