@@ -1,16 +1,21 @@
+import { Button } from "@mui/material";
 import GetProducts from "../components/ItemCollection/ItemCollection";
 import './styles/home.css';
+import { Link } from 'react-router-dom';
 
 
 const printFondo = () => {
     return(
         <>
-            <div>
-                <img alt="FOTO FONDO" className="img__home" src="fondo.jpg"/>    
-            </div>
-            
+            <main>
+                <section>
+                    <article>
+                        <h2>Somos lideres en instalaciones y equipamiento industrial</h2>
+                            <Button variant="contained"><Link to ="/products">Conocé más</Link></Button>       
+                    </article>   
+                </section>
+            </main>           
         </>
-
     )    
 }
 
