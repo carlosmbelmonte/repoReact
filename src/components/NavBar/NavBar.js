@@ -60,9 +60,6 @@ const NavBar = () => {
                                 </ul>
                             </li>
                             <li>
-                                <Button color="inherit" className="navbar__btn"><Link to ="/services" className="link-color">Servicios</Link></Button>
-                            </li>
-                            <li>
                                 <Button color="inherit" className="navbar__btn"><Link to ="/contacts" className="link-color">Contacto</Link></Button>
                             </li>
                         </ul>                
