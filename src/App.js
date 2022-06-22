@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart';
 import {CartContextProvider} from './context/CartContext';
 import CompradoPage from './pages/compraRealizada';
 import Aboutus from './pages/aboutus';
+import DotsMobileStepper from './pages/projects';
 
 function App() { 
   return (
@@ -21,7 +22,7 @@ function App() {
                   <Route exact path='/' element={<Products/>}/> 
                   <Route exact path='/home' element={<Home/>}/>
                   <Route exact path='/aboutus' element={<Aboutus/>}/>
-                  <Route exact path='/projects' element={<h1>PROYECTOS</h1>}/>
+                  <Route exact path='/projects' element={<DotsMobileStepper/>}/>
                   <Route exact path='/products' element={<Products/>}/>
                   <Route exact path='products/:category' element={<Categoria/>}/>
                   <Route path='/product/:id' element={<Detalle/>}/>
