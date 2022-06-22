@@ -5,3 +5,11 @@
 .div__container img{
     max-width: 600px;
 }
+
+p{
+    padding:1rem;
+}
+
+.img-representantes{
+    width: 35%;
+}
