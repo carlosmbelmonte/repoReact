@@ -10,6 +10,7 @@ import {CartContextProvider} from './context/CartContext';
 import CompradoPage from './pages/compraRealizada';
 import Aboutus from './pages/aboutus';
 import DotsMobileStepper from './pages/projects';
+import Contacto from './pages/contacts';
 
 function App() { 
   return (
@@ -27,7 +28,7 @@ function App() {
                   <Route exact path='/products' element={<Products/>}/>
                   <Route exact path='products/:category' element={<Categoria/>}/>
                   <Route path='/product/:id' element={<Detalle/>}/> 
-                  <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
+                  <Route exact path='/contacts' element={<Contacto/>}/>     
                   <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
                   <Route exact path='/cart' element={<Cart/>}/> 
                   <Route path="comprado/:orderId" element={<CompradoPage />} />       
