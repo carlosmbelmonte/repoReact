@@ -20,18 +20,18 @@ function App() {
             <NavBar/>           
               <Routes>
                   <Route exact path='/' element={<Products/>}/> 
-                  <Route exact path='/home' element={<Home/>}/>
+                  <Route exact path='/home' element={<Products/>}/> 
+                  <Route exact path='/inicio' element={<Home/>}/>
                   <Route exact path='/aboutus' element={<Aboutus/>}/>
                   <Route exact path='/projects' element={<DotsMobileStepper/>}/>
                   <Route exact path='/products' element={<Products/>}/>
                   <Route exact path='products/:category' element={<Categoria/>}/>
-                  <Route path='/product/:id' element={<Detalle/>}/>
-                  <Route exact path='/services' element={<h1>SERVICIOS</h1>}/>  
+                  <Route path='/product/:id' element={<Detalle/>}/> 
                   <Route exact path='/contacts' element={<h1>CONTACTO</h1>}/>     
                   <Route path='*' element={<h1>404 - NO EXISTE LA PAGINA</h1>}/>  
                   <Route exact path='/cart' element={<Cart/>}/> 
                   <Route path="comprado/:orderId" element={<CompradoPage />} />       
-              </Routes>            
+              </Routes>           
           </BrowserRouter>  
         </CartContextProvider>  
       </div>
