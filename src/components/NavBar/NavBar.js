@@ -32,7 +32,7 @@ const NavBar = () => {
                     <div className="container-list"> 
                         <ul>
                             <li>
-                                <Button color="inherit" className="navbar__btn"><Link to ="/home" className="link-color">Inicio</Link></Button>
+                                <Button color="inherit" className="navbar__btn"><Link to ="/inicio" className="link-color">Inicio</Link></Button>
                             </li>
                             <li>
                                 <Button color="inherit" className="navbar__btn"><Link to ="/aboutus" className="link-color">Quienes somos</Link></Button>
