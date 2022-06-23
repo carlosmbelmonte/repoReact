@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { saveMsg } from '../components/ItemCollection/ItemCollection';
+import './styles/view.css';
 
 const Contacto = () => {
     const [validation, setValidation] = useState("");
@@ -102,7 +103,7 @@ const Contacto = () => {
       
     return (
         <>
-            <Container>
+            <Container className="generalView">
                 <Grid container spacing={0} sx={{my: 2}}>
                     <Grid item md={6}>
                         <div dangerouslySetInnerHTML={{__html: iframeSource}} className="div__mapa"></div>

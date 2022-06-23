@@ -7,6 +7,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useState } from "react";
 import './styles/projects.css';
 import { Grid } from '@mui/material';
+import './styles/view.css';
 
 export default function DotsMobileStepper() {
     const theme = useTheme();
@@ -49,61 +50,64 @@ export default function DotsMobileStepper() {
 
     return (
         <>
-            <div className="div__container">
-                <h2>{labels[activeStep].titulo}</h2>
-                <img alt="FOTO PRODUCTO" src={`../${labels[activeStep].imagen}`} />
-                <Grid container spacing={0}>
-                    <Grid item md={3}>
-                    </Grid>
-                    <Grid item md={6}>
-                        <MobileStepper
-                        variant="dots"
-                        steps={maxSteps+1}
-                        position="static"
-                        activeStep={activeStep}
-                        sx={{ flexGrow: 1 }}
-                        nextButton={
-                            <Button size="small" onClick={handleNext} >
-                            
-                            {theme.direction === 'rtl' ? (
-                                <KeyboardArrowLeft />
-                            ) : (
-                                <KeyboardArrowRight />
-                            )}
-                            </Button>
-                        }
-                        backButton={
-                            <Button size="small" onClick={handleBack}>
-                            {theme.direction === 'rtl' ? (
-                                <KeyboardArrowRight />
-                            ) : (
-                                <KeyboardArrowLeft />
-                            )}
-                            
-                            </Button>
-                        }
-                        />
-                    </Grid>
-                    <Grid item md={3}>
-                    </Grid>
-                </Grid>    
-            </div>
-            <p>{labels[activeStep].label}</p>
+            <div className="generalView">
+                <div className="div__container">
+                    <h2>{labels[activeStep].titulo}</h2>
+                    <img alt="FOTO PRODUCTO" src={`../${labels[activeStep].imagen}`} />
+                    <Grid container spacing={0}>
+                        <Grid item md={3}>
+                        </Grid>
+                        <Grid item md={6}>
+                            <MobileStepper
+                            variant="dots"
+                            steps={maxSteps+1}
+                            position="static"
+                            activeStep={activeStep}
+                            sx={{ flexGrow: 1 }}
+                            nextButton={
+                                <Button size="small" onClick={handleNext} >
+                                
+                                {theme.direction === 'rtl' ? (
+                                    <KeyboardArrowLeft />
+                                ) : (
+                                    <KeyboardArrowRight />
+                                )}
+                                </Button>
+                            }
+                            backButton={
+                                <Button size="small" onClick={handleBack}>
+                                {theme.direction === 'rtl' ? (
+                                    <KeyboardArrowRight />
+                                ) : (
+                                    <KeyboardArrowLeft />
+                                )}
+                                
+                                </Button>
+                            }
+                            />
+                        </Grid>
+                        <Grid item md={3}>
+                        </Grid>
+                    </Grid>    
+                </div>
+                <p>{labels[activeStep].label}</p>
 
-            <div className="div__container">
-                <h2>Marcas Representadas</h2>
-                <Grid container spacing={0}>
-                    <Grid item md={4}>
-                        <img className="img-representantes" alt="FOTO PRODUCTO" src="../schneider.jpg"/>
+                <div className="div__container">
+                    <h2>Marcas Representadas</h2>
+                    <Grid container spacing={0}>
+                        <Grid item md={4}>
+                            <img className="img-representantes" alt="FOTO PRODUCTO" src="../schneider.jpg"/>
+                        </Grid>
+                        <Grid item md={4}>
+                            <img className="img-representantes" alt="FOTO PRODUCTO" src="../kuka2.jpg"/>
+                        </Grid>
+                        <Grid item md={4}>
+                            <img className="img-representantes" alt="FOTO PRODUCTO" src="../siemens.png"/>
+                        </Grid>
                     </Grid>
-                    <Grid item md={4}>
-                        <img className="img-representantes" alt="FOTO PRODUCTO" src="../kuka2.jpg"/>
-                    </Grid>
-                    <Grid item md={4}>
-                        <img className="img-representantes" alt="FOTO PRODUCTO" src="../siemens.png"/>
-                    </Grid>
-                </Grid>
+                </div>
             </div>
+            
         </>
         
     );

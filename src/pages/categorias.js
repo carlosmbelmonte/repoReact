@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import GetProducts from "../components/ItemCollection/ItemCollection";
 import {Container} from '@mui/material';
+import './styles/view.css';
 
 const Categoria = () => { 
     const [categ, setCateg] = useState([]);
@@ -28,7 +29,7 @@ const Categoria = () => {
     
     return(
         <>
-            <Container>
+            <Container className="generalView">
                 <ItemListContainer title={title} arrayP={categ}/>    
             </Container>
             

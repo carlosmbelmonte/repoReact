@@ -8,7 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {useNavigate} from "react-router-dom";
 import { saveData } from '../ItemCollection/ItemCollection';
 import {Container} from '@mui/material';
-
+import '../../pages/styles/view.css';
 
 const Cart = () => {
     const{ cart, clear, removeItem, sumatoria } = useContext(CartContext);
@@ -174,7 +174,7 @@ const Cart = () => {
 
     return(
         <>
-            <Container>
+            <Container className="generalView">
                 <div className='cart-container'>
                     {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
                     {imprimir()} 

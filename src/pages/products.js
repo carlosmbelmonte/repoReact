@@ -2,6 +2,7 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import { useState, useEffect } from 'react';
 import GetProducts from "../components/ItemCollection/ItemCollection";
 import {Container} from '@mui/material';
+import './styles/view.css';
 
 const Products = () => {
     const [prodX, setProd] = useState([]);
@@ -20,7 +21,7 @@ const Products = () => {
     
     return(
         <>  
-            <Container>
+            <Container className="generalView">
                 <ItemListContainer title={"Automatizacion Industrial"} arrayP={filtro1}/>
                 <ItemListContainer title={"Medidores Trifasicos"} arrayP={filtro2}/>    
             </Container>
