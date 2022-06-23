@@ -4,6 +4,7 @@ import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
+import { saveMsg } from '../components/ItemCollection/ItemCollection';
 
 const Contacto = () => {
     const [validation, setValidation] = useState("");
@@ -11,6 +12,7 @@ const Contacto = () => {
     const [email, setEmail] = useState("");
     const [msg, setMessage] = useState("");
     const [flag, setFlag] = useState(true);
+    const [msgId, setMsgId] = useState("");
 
     const iframeSource = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13147.523808575534!2d-58.51419299999999!3d-34.53124400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd15e0d94908f499e!2sELECTRO%20SELEC!5e0!3m2!1ses!2sar!4v1655990588601!5m2!1ses!2sar" width="480" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     
@@ -31,17 +33,19 @@ const Contacto = () => {
         
         console.log(newMessage);
         setFlag(false)
-        /*saveMsg(newMessage)
+        saveMsg(newMessage)
             .then((respuesta)=>{
-                console.log("1 - Respuesta mostrada en cart: ",respuesta);
+                //console.log("1 - Respuesta mostrada en cart: ",respuesta);
                 //clear();
-            });*/        
+                setMsgId(respuesta);
+            });       
     }
     
     const sendNewMessage = () => {
         setName("");
         setEmail("");
         setMessage("");
+        setMsgId("");
         setFlag(true);
     }
 
@@ -85,6 +89,7 @@ const Contacto = () => {
                     <form onSubmit={handleSubmit}>
                         <fieldset>
                             <legend>{name} su mensaje se envio exitosamente.</legend>
+                            <p>El ID de su mensaje es: {msgId}</p>
                             <p>¿Desea enviar un nuevo mensaje?</p>
                             <Button variant="contained" onClick={sendNewMessage}>SI</Button>
                         </fieldset>

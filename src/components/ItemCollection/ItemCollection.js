@@ -46,7 +46,14 @@ const GetOrder = async(id) =>{
     return order
 }
 
+const saveMsg = async(newMsg) =>{
+    const msgDoc = await addDoc(collection(db,"mensajes"),newMsg);
+    console.log("nuevo mensaje en cARTCONTEX",msgDoc.id)
+    return msgDoc.id
+}
+
 export default GetProducts
 export {GetProduct}
 export {saveData}
 export {GetOrder}
+export {saveMsg}
