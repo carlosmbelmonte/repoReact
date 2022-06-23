@@ -160,3 +160,7 @@
 .form-container .form__btn:hover{
     background-color: lightslategray;
 }
+
+.carritoVacio{
+    height:100vh;
+}

@@ -159,10 +159,13 @@ const Cart = () => {
         }else{
             return(
                 <>
-                    <h2>No hay productos en el carrito!!!</h2> 
-                    <div className="cart-delete-btn">
-                        <Button variant="contained" className='cart__btn'><Link to ="/products" className="link-end">VER PRODUCTOS</Link></Button>    
+                    <div className="carritoVacio">
+                        <h2>No hay productos en el carrito!!!</h2> 
+                        <div className="cart-delete-btn">
+                            <Button variant="contained" className='cart__btn'><Link to ="/products" className="link-end">VER PRODUCTOS</Link></Button>    
+                        </div>    
                     </div>
+                    
                     {/*console.log("items actuales en page cart: ",sumatoria("cantidades"))*/}
                 </>
             )

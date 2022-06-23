@@ -32,6 +32,7 @@ const ItemDetail = ({data}) => {
     
     return (
         <>
+            <div className="detail__view">
             <Grid className="border-grid" container spacing={0}>
                 <Grid className="border-gridSpacing" item md={4}>
                     <img className="img-Detail" alt="FOTO PRODUCTO" src={`../${data.imagen}`} />
@@ -69,7 +70,7 @@ const ItemDetail = ({data}) => {
                     </div>                    
                 </Grid>
             </Grid>
-             
+           </div>  
         </>  
     ) 
 }
