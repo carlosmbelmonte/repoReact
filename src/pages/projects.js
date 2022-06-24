@@ -8,6 +8,7 @@ import { useState } from "react";
 import './styles/projects.css';
 import { Grid } from '@mui/material';
 import './styles/view.css';
+import Footer from '../components/Footer/Footer';
 
 export default function DotsMobileStepper() {
     const theme = useTheme();
@@ -50,7 +51,7 @@ export default function DotsMobileStepper() {
 
     return (
         <>
-            <div className="generalView">
+            <div>
                 <div className="div__container">
                     <h2>{labels[activeStep].titulo}</h2>
                     <img alt="FOTO PRODUCTO" src={`../${labels[activeStep].imagen}`} />
@@ -107,6 +108,7 @@ export default function DotsMobileStepper() {
                     </Grid>
                 </div>
             </div>
+            <Footer/>
             
         </>
         

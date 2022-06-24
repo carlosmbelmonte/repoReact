@@ -1,6 +1,12 @@
 .generalView{
-    height:90vh;
+    height:100vh;
 }
-.generalView_aboutus{
+.generalView_maxcontent{
     height:max-content
 }
+
+.footer-posicionamiento{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+  }

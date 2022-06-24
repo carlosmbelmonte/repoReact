@@ -22,7 +22,7 @@ const ItemDetailContainer = ({title}) => {
 
     return (
         <>
-            <div className="generalView">
+            <div>
             <Container>
                 
                     <h2>{title}</h2>

@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import GetProducts from "../components/ItemCollection/ItemCollection";
 import {Container} from '@mui/material';
 import './styles/view.css';
+import Footer from "../components/Footer/Footer";
 
 const Categoria = () => { 
     const [categ, setCateg] = useState([]);
@@ -29,10 +30,10 @@ const Categoria = () => {
     
     return(
         <>
-            <Container className="generalView">
+            <Container>
                 <ItemListContainer title={title} arrayP={categ}/>    
             </Container>
-            
+            <Footer/>
         </>        
     )
 }

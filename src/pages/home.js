@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import './styles/home.css';
 import { Link } from 'react-router-dom';
 import './styles/view.css';
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
     return(
@@ -12,9 +13,9 @@ const Home = () => {
                     <div className="home_divbtn">
                         <Button variant="contained" className="home__btn"><Link to ="/aboutus" className="link-end">Conocé más</Link></Button>                              
                     </div>    
-                </div>
-                
-            </div>            
+                </div>   
+            </div> 
+            <Footer/>         
         </>
         
     )

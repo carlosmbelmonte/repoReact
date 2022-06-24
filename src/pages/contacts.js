@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { saveMsg } from '../components/ItemCollection/ItemCollection';
 import './styles/view.css';
+import Footer from '../components/Footer/Footer';
 
 const Contacto = () => {
     const [validation, setValidation] = useState("");
@@ -103,7 +104,7 @@ const Contacto = () => {
       
     return (
         <>
-            <Container className="generalView">
+            <Container>
                 <Grid container spacing={0} sx={{my: 2}}>
                     <Grid item md={6}>
                         <div dangerouslySetInnerHTML={{__html: iframeSource}} className="div__mapa"></div>
@@ -130,7 +131,7 @@ const Contacto = () => {
                     {flagMessage()}                   
                 </Box>
             </Container>
-                    
+            <Footer/>        
 
         </>
     )

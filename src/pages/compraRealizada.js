@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import './styles/compraRealizada.css';
 import {Container} from '@mui/material';
 import './styles/view.css';
+import Footer from "../components/Footer/Footer";
 
 const CompradoPage = () => {
     const [orden , setOrden] = useState({})
@@ -22,7 +23,7 @@ const CompradoPage = () => {
     return(
         <>
             <Container>
-                <div className="generalView">
+                <div>
                     <h1>Gracias por su compra</h1>
                     {console.log(orden)}
                     <p>{orden.buyer.name}, gracias por su compra. El ID de su compra es el siguiente: {orden.id}</p>
@@ -51,6 +52,7 @@ const CompradoPage = () => {
                     <p>(***Nota: El precio total de los productos incluye IVA)</p>    
                 </div>                    
             </Container>
+            <Footer/>
         </>        
     )
 }

@@ -11,7 +11,6 @@ import CompradoPage from './pages/compraRealizada';
 import Aboutus from './pages/aboutus';
 import DotsMobileStepper from './pages/projects';
 import Contacto from './pages/contacts';
-import Footer from './components/Footer/Footer';
 
 function App() { 
   return (
@@ -34,7 +33,7 @@ function App() {
                   <Route exact path='/cart' element={<Cart/>}/> 
                   <Route path="comprado/:orderId" element={<CompradoPage />} />       
               </Routes> 
-            <Footer/>          
+                     
           </BrowserRouter>  
         </CartContextProvider>  
       </div>

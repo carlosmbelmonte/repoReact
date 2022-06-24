@@ -9,6 +9,7 @@ import {useNavigate} from "react-router-dom";
 import { saveData } from '../ItemCollection/ItemCollection';
 import {Container} from '@mui/material';
 import '../../pages/styles/view.css';
+import Footer from '../Footer/Footer';
 
 const Cart = () => {
     const{ cart, clear, removeItem, sumatoria } = useContext(CartContext);
@@ -174,7 +175,7 @@ const Cart = () => {
 
     return(
         <>
-            <Container className="generalView">
+            <Container>
                 <div className='cart-container'>
                     {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
                     {imprimir()} 
@@ -182,6 +183,7 @@ const Cart = () => {
                     {displayForm(cart.length)}                   
                 </div>    
             </Container>
+            <Footer/>
         </>
         
         

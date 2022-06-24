@@ -12,5 +12,11 @@
   display: flex;
 }
 .footer-item{
-  padding-right: 2rem;
+  padding-right: 1rem;
+}
+
+.footer-posicionamiento{
+  position:fixed;
+  bottom: 0;
+  width: 100%;
 }
