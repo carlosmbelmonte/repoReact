@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './styles/compraRealizada.css';
 import {Container} from '@mui/material';
+import './styles/view.css';
 
 const CompradoPage = () => {
     const [orden , setOrden] = useState({})
@@ -21,7 +22,7 @@ const CompradoPage = () => {
     return(
         <>
             <Container>
-                <div className="viewport">
+                <div className="generalView">
                     <h1>Gracias por su compra</h1>
                     {console.log(orden)}
                     <p>{orden.buyer.name}, gracias por su compra. El ID de su compra es el siguiente: {orden.id}</p>

@@ -7,7 +7,7 @@ import './styles/view.css';
 const Aboutus = () => {
     return(
         <>
-            <div>
+            <div className='generalView_aboutus'>
                 <Grid container spacing={2}>
                     <Grid item md={6}> 
                         <YoutubeEmbed embedId="tIIJME8-au8" />                                                             

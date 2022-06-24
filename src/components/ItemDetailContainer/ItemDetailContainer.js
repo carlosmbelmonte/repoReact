@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GetProduct } from "../ItemCollection/ItemCollection";
 import {Container} from '@mui/material';
+import '../../pages/styles/view.css'
 
 const ItemDetailContainer = ({title}) => {
     const [detail , setDetail] = useState({})
@@ -21,12 +22,15 @@ const ItemDetailContainer = ({title}) => {
 
     return (
         <>
+            <div className="generalView">
             <Container>
-                <h2>{title}</h2>
-                <ItemDetail data={detail}/>
+                
+                    <h2>{title}</h2>
+                    <ItemDetail data={detail}/>    
+                               
                 {console.log(detail)}     
             </Container>
-            
+            </div>
         </>  
     ) 
 }
