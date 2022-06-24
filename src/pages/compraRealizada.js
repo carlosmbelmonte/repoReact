@@ -23,7 +23,7 @@ const CompradoPage = () => {
     return(
         <>
             <Container>
-                <div>
+                <div className="margin-box">
                     <h1>Gracias por su compra</h1>
                     {console.log(orden)}
                     <p>{orden.buyer.name}, gracias por su compra. El ID de su compra es el siguiente: {orden.id}</p>

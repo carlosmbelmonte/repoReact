@@ -5,6 +5,7 @@ import GetProducts from "../components/ItemCollection/ItemCollection";
 import {Container} from '@mui/material';
 import './styles/view.css';
 import Footer from "../components/Footer/Footer";
+import '../components/ItemDetail/ItemDetail.css'
 
 const Categoria = () => { 
     const [categ, setCateg] = useState([]);
@@ -31,7 +32,9 @@ const Categoria = () => {
     return(
         <>
             <Container>
-                <ItemListContainer title={title} arrayP={categ}/>    
+                <div className="margin-boxies">
+                    <ItemListContainer title={title} arrayP={categ}/>     
+                </div>       
             </Container>
             <Footer/>
         </>        

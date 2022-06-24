@@ -105,7 +105,7 @@ const Contacto = () => {
     return (
         <>
             <Container>
-                <Grid container spacing={0} sx={{my: 2}}>
+                <Grid container spacing={0} sx={{mt: 2}}>
                     <Grid item md={6}>
                         <div dangerouslySetInnerHTML={{__html: iframeSource}} className="div__mapa"></div>
                     </Grid>
@@ -125,7 +125,7 @@ const Contacto = () => {
                         width: 'auto',
                         bgcolor: '#d2e7f7',
                         borderRadius: 5,
-                        mb: 2
+                        mb: '28%'
                     }}
                 >
                     {flagMessage()}                   

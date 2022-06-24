@@ -32,7 +32,7 @@ const ItemDetail = ({data}) => {
     
     return (
         <>
-            <div>
+            <div className="margin-boxies">
             <Grid className="border-grid" container spacing={0}>
                 <Grid className="border-gridSpacing" item md={4}>
                     <img className="img-Detail" alt="FOTO PRODUCTO" src={`../${data.imagen}`} />
