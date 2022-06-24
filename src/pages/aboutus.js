@@ -3,7 +3,6 @@ import YoutubeEmbed from '../components/YoutubeComponent/YoutubeEmbed';
 import '../../src/components/YoutubeComponent/styles.css';
 import './styles/aboutus.css';
 import './styles/view.css';
-import {Container} from '@mui/material';
 
 const Aboutus = () => {
     return(
@@ -11,7 +10,7 @@ const Aboutus = () => {
             <div>
                 <Grid container spacing={2}>
                     <Grid item md={6}> 
-                        <YoutubeEmbed embedId="L0dMwyvV9o4" />                                                             
+                        <YoutubeEmbed embedId="tIIJME8-au8" />                                                             
                     </Grid>
                     <Grid item md={6}>
                         <div>
