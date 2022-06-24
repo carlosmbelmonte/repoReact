@@ -23,8 +23,11 @@ const Products = () => {
     return(
         <>  
             <Container>
-                <ItemListContainer title={"Automatizacion Industrial"} arrayP={filtro1}/>
-                <ItemListContainer title={"Medidores Trifasicos"} arrayP={filtro2}/>    
+                <div className="margin-products">
+                    <ItemListContainer title={"Automatizacion Industrial"} arrayP={filtro1}/>
+                    <ItemListContainer title={"Medidores Trifasicos"} arrayP={filtro2}/>     
+                </div>
+                   
             </Container>
             <Footer/>
         </>        
