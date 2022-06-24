@@ -51,7 +51,7 @@ export default function DotsMobileStepper() {
 
     return (
         <>
-            <div>
+            <div className="margin-projects">
                 <div className="div__container">
                     <h2>{labels[activeStep].titulo}</h2>
                     <img alt="FOTO PRODUCTO" src={`../${labels[activeStep].imagen}`} />
