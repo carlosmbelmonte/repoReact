@@ -22,18 +22,24 @@ const Footer = ({propiedad}) => {
                             <h3 className="footer_h3">Redes Sociales</h3>
                             <ul className="footer__list footer_flex">
                                 <li className="footer-item">
-                                    <FacebookIcon className="footer-icon"/> 
+                                    <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer-color">
+                                        <FacebookIcon className="footer-icon"/> 
+                                    </a>
                                 </li>
                                 <li className="footer-item">
-                                    <InstagramIcon className="footer-icon"/>
+                                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer-color">
+                                        <InstagramIcon className="footer-icon"/>
+                                    </a>
                                 </li>
                                 <li className="footer-item">
-                                    <LinkedInIcon className="footer-icon"/>
+                                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="footer-color">
+                                        <LinkedInIcon className="footer-icon"/>
+                                    </a>
                                 </li>
                                 <li className="footer-item">
-                                    
-                                    <WhatsAppIcon className="footer-icon"/>
-                                    
+                                    <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer" className="footer-color">
+                                        <WhatsAppIcon className="footer-icon"/>
+                                    </a>    
                                 </li>
                             </ul>    
                         </div>                       
