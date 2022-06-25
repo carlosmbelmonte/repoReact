@@ -4,14 +4,22 @@ import { useState } from 'react';
 const CartContext = createContext();
 
 const CartContextProvider = ({children}) =>{       
-    const [cart, setCart] = useState([]);
-    const [preciosItem, setPreciosItem] = useState([]);
-    const [quantityItem, setQuantityItem] = useState([]);
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('saveCart')) || []);
+    const [preciosItem, setPreciosItem] = useState(JSON.parse(localStorage.getItem('saveArrayPrice')) || []);
+    const [quantityItem, setQuantityItem] = useState(JSON.parse(localStorage.getItem('saveArrayQuantity')) || []);
 
-    const [prodsInCart, setProdsInCart] = useState(0);
-    const [prodsPrice, setProdsPrice] = useState(0);
+    const [prodsInCart, setProdsInCart] = useState( parseInt(localStorage.getItem('saveQuantity')) || 0);
+    const [prodsPrice, setProdsPrice] = useState( parseInt(localStorage.getItem('savePrice')) || 0);
 
     const [boton,setBoton]=useState(false);//-------->Sirve para setear los botones del carrito en disabled o enabled
+
+    const functionStorage = (v,w,x,y,z) =>{
+        localStorage.setItem('saveArrayPrice', JSON.stringify(v));
+        localStorage.setItem('saveArrayQuantity', JSON.stringify(w));
+        localStorage.setItem('saveCart', JSON.stringify(x));
+        localStorage.setItem('savePrice', y);
+        localStorage.setItem('saveQuantity', z);
+    }
 
     const addItem = (product) =>{
         let isInCart = cart.findIndex( cartItem => cartItem.nombre === product.nombre );
@@ -21,16 +29,13 @@ const CartContextProvider = ({children}) =>{
             quantityItem.push(product.quantity);
             setProdsPrice(preciosItem.reduce((a, b) => a + b, 0));
             setProdsInCart(quantityItem.reduce((a, b) => a + b, 0));  
-            localStorage.setItem('saveCart', JSON.stringify(cart));
+            functionStorage(preciosItem,quantityItem,cart,preciosItem.reduce((a, b) => a + b, 0),quantityItem.reduce((a, b) => a + b, 0));
         }else{
             console.log("El producto ya se encontraba en el carrito"); 
         }       
     }
 
-    const removeItem = (nombre) => {  
-        let getCart = JSON.parse(localStorage.getItem('saveCart'));
-        setCart(getCart);
-        
+    const removeItem = (nombre) => {          
         let index = cart.findIndex( el => el.nombre === nombre);
         cart.splice(index, 1);
         setCart([...cart]);        
@@ -47,7 +52,7 @@ const CartContextProvider = ({children}) =>{
         setProdsPrice(preciosItem.reduce((a, b) => a + b, 0));
         setProdsInCart(quantityItem.reduce((a, b) => a + b, 0));   
         
-        localStorage.setItem('saveCart', JSON.stringify(cart));
+        functionStorage(preciosItem,quantityItem,cart,preciosItem.reduce((a, b) => a + b, 0),quantityItem.reduce((a, b) => a + b, 0));
     }
 
     const clear = () => {
@@ -56,7 +61,7 @@ const CartContextProvider = ({children}) =>{
         setQuantityItem([]);
         setProdsInCart(0);
         setProdsPrice(0);
-        localStorage.setItem('saveCart', JSON.stringify([]));
+        functionStorage([],[],[],0,0);
     }
   
     const sumatoria=(variable)=>{       
