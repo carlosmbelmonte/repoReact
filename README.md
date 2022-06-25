@@ -26,7 +26,5 @@ Una vez confirmada la compra, se almacena esta ORDEN en Firebase.
 Tambien la pagina cuenta con otras secciones de navegabilidad. La seccion de Contacto, almacena cada mensaje realizado por el usuario en Firebase. 
 ![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/navegabilidad.gif)
 
-```bash
-    Demostracion del funcionamiento del localstorage
-```
+### Demostracion del funcionamiento del localstorage
 ![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/localstorage.gif)
