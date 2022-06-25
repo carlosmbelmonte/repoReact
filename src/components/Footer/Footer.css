@@ -3,6 +3,7 @@
   color: white;
   padding: 0;
   margin: 0;
+  display: inline-block
 }
 .footer__list {
   list-style: none;

@@ -10,12 +10,21 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = ({propiedad}) => {
+    function mouseOver(varColor,varId) {
+        document.getElementById(varId).style.backgroundColor = varColor;
+    }
+      
+    function mouseOut(varId) {
+        document.getElementById(varId).style.backgroundColor = "";
+    } 
+
+
     return (
         <>
             <Box sx={{ bgcolor: 'text.primary' }} className={propiedad}>                  
                 <Grid container spacing={0}>
                     <Grid item md={7}>
-                        
+                    
                     </Grid>
                     <Grid item md={2} >
                         <div className="footer-div">
@@ -23,22 +32,22 @@ const Footer = ({propiedad}) => {
                             <ul className="footer__list footer_flex">
                                 <li className="footer-item">
                                     <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer-color">
-                                        <FacebookIcon className="footer-icon"/> 
+                                        <FacebookIcon id="facebook" onMouseOver={()=>mouseOver('#3b5998','facebook')} onMouseOut={()=>mouseOut('facebook')}/> 
                                     </a>
                                 </li>
                                 <li className="footer-item">
                                     <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer-color">
-                                        <InstagramIcon className="footer-icon"/>
+                                        <InstagramIcon id="instagram" onMouseOver={()=>mouseOver('#bc2a8d','instagram')} onMouseOut={()=>mouseOut('instagram')}/>
                                     </a>
                                 </li>
                                 <li className="footer-item">
                                     <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="footer-color">
-                                        <LinkedInIcon className="footer-icon"/>
+                                        <LinkedInIcon id="linkedin" onMouseOver={()=>mouseOver('#0e76a8','linkedin')} onMouseOut={()=>mouseOut('linkedin')}/>
                                     </a>
                                 </li>
                                 <li className="footer-item">
                                     <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer" className="footer-color">
-                                        <WhatsAppIcon className="footer-icon"/>
+                                        <WhatsAppIcon id="whatsapp" onMouseOver={()=>mouseOver('#4FCE5D','whatsapp')} onMouseOut={()=>mouseOut('whatsapp')}/>
                                     </a>    
                                 </li>
                             </ul>    
