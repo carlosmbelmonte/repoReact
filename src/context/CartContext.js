@@ -12,7 +12,7 @@ const CartContextProvider = ({children}) =>{
     const [prodsPrice, setProdsPrice] = useState(0);
 
     const [boton,setBoton]=useState(false);//-------->Sirve para setear los botones del carrito en disabled o enabled
-    
+
     const addItem = (product) =>{
         let isInCart = cart.findIndex( cartItem => cartItem.nombre === product.nombre );
         if (isInCart === -1){
@@ -21,12 +21,16 @@ const CartContextProvider = ({children}) =>{
             quantityItem.push(product.quantity);
             setProdsPrice(preciosItem.reduce((a, b) => a + b, 0));
             setProdsInCart(quantityItem.reduce((a, b) => a + b, 0));  
+            localStorage.setItem('saveCart', JSON.stringify(cart));
         }else{
             console.log("El producto ya se encontraba en el carrito"); 
         }       
     }
 
-    const removeItem = (nombre) => {         
+    const removeItem = (nombre) => {  
+        let getCart = JSON.parse(localStorage.getItem('saveCart'));
+        setCart(getCart);
+        
         let index = cart.findIndex( el => el.nombre === nombre);
         cart.splice(index, 1);
         setCart([...cart]);        
@@ -41,7 +45,9 @@ const CartContextProvider = ({children}) =>{
             quantityItem.push(cart[i].quantity);
         }
         setProdsPrice(preciosItem.reduce((a, b) => a + b, 0));
-        setProdsInCart(quantityItem.reduce((a, b) => a + b, 0));         
+        setProdsInCart(quantityItem.reduce((a, b) => a + b, 0));   
+        
+        localStorage.setItem('saveCart', JSON.stringify(cart));
     }
 
     const clear = () => {
@@ -49,7 +55,8 @@ const CartContextProvider = ({children}) =>{
         setPreciosItem([]);
         setQuantityItem([]);
         setProdsInCart(0);
-        setProdsPrice(0)
+        setProdsPrice(0);
+        localStorage.setItem('saveCart', JSON.stringify([]));
     }
   
     const sumatoria=(variable)=>{       
@@ -71,7 +78,8 @@ const CartContextProvider = ({children}) =>{
         prodsInCart,
         prodsPrice,
         setBoton,
-        boton   
+        boton,
+        setCart   
     }
 
     return(

@@ -23,6 +23,8 @@ const Cart = () => {
 
     const navigate = useNavigate();
 
+    let getCart = JSON.parse(localStorage.getItem('saveCart'));
+
     const deleteTodo = () => {
         setDeleteAll(true);
         clear();
@@ -36,7 +38,7 @@ const Cart = () => {
 
     const gridMap = () => {
         return(
-            cart.map( (elemento,i) => {
+            getCart.map( (elemento,i) => {
                 return(
                     <>
                         <Grid className="grid-container" container spacing={0}>
@@ -76,7 +78,7 @@ const Cart = () => {
     }
 
     const imprimir = () => {
-        if(deleteAll === false && cart.length !== 0){
+        if(deleteAll === false && getCart.length !== 0){
             if(delItem===false){
                 return(
                     gridMap()                 
@@ -137,7 +139,7 @@ const Cart = () => {
         }
         const newOrder = {
             buyer: { name, phone, email },
-            items: cart.map((item) => ({  id: item.id, name: item.nombre, quantity: item.quantity, price: item.precio })),
+            items: getCart.map((item) => ({  id: item.id, name: item.nombre, quantity: item.quantity, price: item.precio })),
             date: new Date(),
             total: sumatoria("precios")
         }
@@ -177,10 +179,10 @@ const Cart = () => {
         <>
             <Container>
                 <div className='cart-container'>
-                    {/*console.log("Productos existentes en PAGINA CARRITO", cart)*/}
+                    {console.log("Productos existentes en PAGINA CARRITO", getCart)}
                     {imprimir()} 
-                    <DisplayElements condition={cart.length}/>  
-                    {displayForm(cart.length)}                   
+                    <DisplayElements condition={getCart.length}/>  
+                    {displayForm(getCart.length)}                   
                 </div>    
             </Container>
             <Footer/>
