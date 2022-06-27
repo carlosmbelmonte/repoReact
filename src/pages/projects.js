@@ -58,7 +58,7 @@ export default function DotsMobileStepper() {
                     <Grid container spacing={0}>
                         <Grid item md={3}>
                         </Grid>
-                        <Grid item md={6}>
+                        <Grid item md={6} xs={12}>
                             <MobileStepper
                             variant="dots"
                             steps={maxSteps+1}
@@ -96,13 +96,13 @@ export default function DotsMobileStepper() {
                 <div className="div__container">
                     <h2>Marcas Representadas</h2>
                     <Grid container spacing={0}>
-                        <Grid item md={4}>
+                        <Grid item md={4} xs={4}>
                             <img className="img-representantes" alt="FOTO PRODUCTO" src="../schneider.jpg"/>
                         </Grid>
-                        <Grid item md={4}>
+                        <Grid item md={4} xs={4}>
                             <img className="img-representantes" alt="FOTO PRODUCTO" src="../kuka2.jpg"/>
                         </Grid>
-                        <Grid item md={4}>
+                        <Grid item md={4} xs={4}>
                             <img className="img-representantes" alt="FOTO PRODUCTO" src="../siemens.png"/>
                         </Grid>
                     </Grid>
