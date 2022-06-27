@@ -16,7 +16,7 @@ const Contacto = () => {
     const [flag, setFlag] = useState(true);
     const [msgId, setMsgId] = useState("");
 
-    const iframeSource = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13147.523808575534!2d-58.51419299999999!3d-34.53124400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd15e0d94908f499e!2sELECTRO%20SELEC!5e0!3m2!1ses!2sar!4v1655990588601!5m2!1ses!2sar" width="480" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+    const iframeSource = '<iframe class="div_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13147.523808575534!2d-58.51419299999999!3d-34.53124400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd15e0d94908f499e!2sELECTRO%20SELEC!5e0!3m2!1ses!2sar!4v1655990588601!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -59,7 +59,7 @@ const Contacto = () => {
                         <fieldset>
                             <legend>Cómo podemos ayudarte?</legend>
                             <Grid container spacing={0}>
-                                <Grid item md={6}>
+                                <Grid item md={6} xs={12}>
                                     <div>
                                         <label className="contact__label">Nombre y Apellido(*)</label>
                                         <input className="contact__input" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)}/>    
@@ -70,7 +70,7 @@ const Contacto = () => {
                                     </div>
                                     {(validation === ''? '': <p>{validation}</p>)}
                                 </Grid>
-                                <Grid item md={5}>
+                                <Grid item md={6} xs={12}>
                                     <div>
                                         <label className="contact__label">Mensaje(*)</label>
                                         <textarea id="msg" name="msg" value={msg} placeholder="Escriba aqui su consulta" onChange={(e) => setMessage(e.target.value)}></textarea>
@@ -125,7 +125,8 @@ const Contacto = () => {
                         width: 'auto',
                         bgcolor: '#d2e7f7',
                         borderRadius: 5,
-                        mb: '28%'
+                        mb: '28%',
+                        mt: 2
                     }}
                 >
                     {flagMessage()}                   

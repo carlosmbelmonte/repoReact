@@ -15,13 +15,13 @@ legend{
 }
 .contact__label,.contact__input{
     display: block;
-    width: 20rem;
+    width: 90%;
     margin-bottom: 0.5rem;
 }
 textarea{
     display: block;
     resize: vertical;
-    width: 20rem;
+    width: 90%;
     height: 5rem;
     margin-bottom: 0.5rem;
 }
@@ -83,4 +83,9 @@ p{
 }
 .contact__divbtn .contact__submit:hover{
     background-color: lightslategray;
+}
+
+.div_iframe{
+    width: 100%;
+    height: 75vh;
 }
