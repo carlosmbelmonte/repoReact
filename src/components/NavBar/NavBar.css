@@ -68,3 +68,39 @@
 .container-list li ul li:hover {
   background-color:rgb(140, 159, 179);
 }
+
+@media only screen and (max-width: 899px) {
+  .container-logo{
+    display: flex;
+    padding: 5px 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-list{
+    display: none; 
+  }
+  .mobile-list{
+    display: flex;
+    align-items: flex-start;
+  }
+  .mobile-list ul{
+    list-style: none;  
+  }
+  .mobile-list .navbar__btn{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .mobile-list .navbar__btn:hover {
+    background-color: lightslategray; 
+  } 
+  .link-color{
+    color: white;
+    text-decoration:none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .mobile-list{
+    display: none;
+  }
+}
