@@ -23,7 +23,7 @@ const Item = ({nombreProducto, precioProducto, imagenProducto, stockProducto, id
         }        
     }
     return(
-        <Card sx={{ minWidth: 275 }} className="item-card">
+        <Card sx={{ minWidth: 50 }} className="item-card">
             <CardContent>
                 <div className="container-card">
                     <div>
