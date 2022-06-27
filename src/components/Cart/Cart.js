@@ -120,7 +120,7 @@ const Cart = () => {
                                     {/*<DisplayBtnDelete condition={endShop} posicion={"general"}/>*/}
                                 </div>    
                             </div>
-                        </form>
+                    </form>
                 </div>
             )    
         }
