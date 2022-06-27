@@ -116,22 +116,29 @@ const NavBar = () => {
                     </div>
                     <div className="mobile-list">
                         <Grid container spacing={0}>
-                            <Grid item xs={6}>
+                            <Grid   item xs={6} 
+                                    container
+                                    direction="row"
+                                    justifyContent="flex-start"
+                                    alignItems="center">
                                 <Button color="inherit" onClick={handleDrawerToggle} >
                                     <MenuIcon />    
                                 </Button>      
                             </Grid>
-                            <Grid item xs={6}>
-                                
+                            <Grid   item xs={6}
+                                    container
+                                    direction="row"
+                                    justifyContent="flex-end"
+                                    alignItems="center">
+                                        <CartWidget/>         
                             </Grid>
                             <Grid item xs={12}>
-                                {showMenu()}
+                                <div className="div_mobilelist">
+                                    {showMenu()}    
+                                </div>
+                                
                             </Grid>
-
-
-                        </Grid>
-                           
-                        
+                        </Grid>   
                     </div>
                 </Grid>
                 <Grid 
@@ -140,8 +147,11 @@ const NavBar = () => {
                     direction="row"
                     justifyContent="flex-end"
                     alignItems="center"
-                >                                  
-                    <CartWidget/>                           
+                >   
+                    <div className="desktop_divcarrito">
+                        <CartWidget/>     
+                    </div>                               
+                                              
                 </Grid>
             </Grid>                        
             </Toolbar>

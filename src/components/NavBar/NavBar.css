@@ -97,10 +97,37 @@
     color: white;
     text-decoration:none;
   }
+  .mobile-list li ul {
+    display:none;      
+  }
+  .mobile-list li:hover > ul {
+    display:block;
+  }
+  .mobile-list li ul li {
+    background-color: lightslategray;
+  }
+  .mobile-list li ul li:hover {
+    background-color:rgb(140, 159, 179);
+  }
+  .desktop_divcarrito{
+    display: none;
+  }
+  .mobile_divcarrito{
+    display:flex;
+  }
+  .div_mobilelist{
+    width: 75vw;
+  }
 }
 
 @media only screen and (min-width: 900px) {
   .mobile-list{
+    display: none;
+  }
+  .desktop_divcarrito{
+    display:flex;
+  }
+  .mobile_divcarrito{
     display: none;
   }
 }
