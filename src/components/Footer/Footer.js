@@ -23,10 +23,10 @@ const Footer = ({propiedad}) => {
         <>
             <Box sx={{ bgcolor: 'text.primary' }} className={propiedad}>                  
                 <Grid container spacing={0}>
-                    <Grid item md={7}>
+                    <Grid item md={7} xs={12}>
                     
                     </Grid>
-                    <Grid item md={2} >
+                    <Grid item md={2} xs={12}>
                         <div className="footer-div">
                             <h3 className="footer_h3">Redes Sociales</h3>
                             <ul className="footer__list footer_flex">
@@ -53,7 +53,7 @@ const Footer = ({propiedad}) => {
                             </ul>    
                         </div>                       
                     </Grid>
-                    <Grid item md={3}> 
+                    <Grid item md={3} xs={12}> 
                         <div className="footer-div">
                             <Link to ="/contacts"><h3 className="footer_h3 footer-icon">Contacto</h3></Link>
                             <ul className="footer__list">
