@@ -106,10 +106,10 @@ const Contacto = () => {
         <>
             <Container>
                 <Grid container spacing={0} sx={{mt: 2}}>
-                    <Grid item md={6}>
+                    <Grid item md={6} xs={12}>
                         <div dangerouslySetInnerHTML={{__html: iframeSource}} className="div__mapa"></div>
                     </Grid>
-                    <Grid item md={5}>
+                    <Grid item md={6} xs={12}>
                         <div>
                             <ul>
                                 <li>Estados Unidos 1200, Munro, Buenos Aires, Argentina</li>
