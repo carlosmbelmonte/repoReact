@@ -28,3 +28,6 @@ Tambien la pagina cuenta con otras secciones de navegabilidad. La seccion de Con
 
 ### Demostracion del funcionamiento del localstorage
 ![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/localstorage.gif)
+
+### Demostracion del proyecto Responsive
+![image](https://github.com/carlosmbelmonte/repoReact/blob/main/public/responsive.gif)
